@@ -1,0 +1,102 @@
+<nav class="navbar navbar-expand-lg fixed-top">
+    <a class="navbar-brand" href="#"><img  alt width="40" src="https://www.svgrepo.com/show/22246/internet.svg"/> Job360-Admin</a>
+    <button (click)="toggleSidebar()" class="navbar-toggler" type="button">
+        <!-- <span class="navbar-toggler-icon"></span> -->
+        <i aria-hidden="true" class="fa fa-bars text-muted"></i>
+    </button>
+    <div class="collapse navbar-collapse">
+        
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item d-none d-xl-block">
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" placeholder="{{ 'Search' | translate }}" type="text" />
+                </form>
+            </li>
+            &nbsp;
+            &nbsp;
+            <li class="nav-item dropdown" ngbDropdown>
+                <a class="nav-link" href="javascript:void(0)" ngbDropdownToggle>
+                    <i class="fa fa-envelope"></i> <b class="caret"></b><span class="sr-only">(current)</span>
+                </a>
+                <ul class="dropdown-menu-right messages" ngbDropdownMenu>
+                    <li class="media">
+                        <img
+                            alt="Generic placeholder image"
+                            width="50"
+                            class="d-flex align-self-center mr-3"
+                            src="https://media-exp1.licdn.com/dms/image/C510BAQEbLs4-nYOVCg/company-logo_200_200/0/1559550652036?e=2147483647&v=beta&t=sZtHNelPz0kh0iuqbdW8fPywAJuc5O0isedfjCU4M9g"
+                        />
+                        <div class="media-body">
+                            <h5 class="mt-0 mb-1">Kovai.co</h5>
+                            <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
+                            <p class="last">.Net Intern Post</p>
+                        </div>
+                    </li>
+                    <li class="media">
+                        <img
+                            alt="Generic placeholder image"
+                            width="50"
+                            class="d-flex align-self-center mr-3"
+                            src="https://media-exp1.licdn.com/dms/image/C510BAQEbLs4-nYOVCg/company-logo_200_200/0/1559550652036?e=2147483647&v=beta&t=sZtHNelPz0kh0iuqbdW8fPywAJuc5O0isedfjCU4M9g"
+                        />
+                        <div class="media-body">
+                            <h5 class="mt-0 mb-1">Kovai.co</h5>
+                            <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
+                            <p class="last">Senior Digital Marketer</p>
+                        </div>
+                    </li>
+                    <li class="media">
+                        <img
+                            alt="Generic placeholder image"
+                            width="50"
+                            class="d-flex align-self-center mr-3"
+                            src="https://media-exp1.licdn.com/dms/image/C510BAQEbLs4-nYOVCg/company-logo_200_200/0/1559550652036?e=2147483647&v=beta&t=sZtHNelPz0kh0iuqbdW8fPywAJuc5O0isedfjCU4M9g"
+                        />
+                        <div class="media-body">
+                            <h5 class="mt-0 mb-1">Kovai.co</h5>
+                            <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
+                            <p class="last">Sales Development Post</p>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown" ngbDropdown>
+                <a class="nav-link" href="javascript:void(0)" ngbDropdownToggle>
+                    <i class="fa fa-bell"></i> <b class="caret"></b><span class="sr-only">(current)</span>
+                </a>
+                <div class="dropdown-menu-right" ngbDropdownMenu>
+                    <a class="dropdown-item" href="javascript:void(0)">
+                        {{ 'Pending Task' | translate }} <span class="badge badge-info">6</span>
+                    </a>
+                    <a class="dropdown-item" href="javascript:void(0)">
+                        {{ 'In queue' | translate }} <span class="badge badge-info"> 13</span>
+                    </a>
+                    <a class="dropdown-item" href="javascript:void(0)">
+                        {{ 'Prior' | translate }} <span class="badge badge-info"> 5</span>
+                    </a>
+                </div>
+            </li>
+            
+            <li class="nav-item dropdown" ngbDropdown>
+                
+                <a class="nav-link" href="javascript:void(0)" ngbDropdownToggle>
+                    <i class="fa fa-user"></i> Admin <b class="caret"></b>
+                </a>
+                <div class="dropdown-menu-right" ngbDropdownMenu>
+                    <a class="dropdown-item" href="javascript:void(0)">
+                        <i class="fa fa-fw fa-user"></i> {{ 'Profile' | translate }}
+                    </a>
+                    <a class="dropdown-item" href="javascript:void(0)">
+                        <i class="fa fa-fw fa-envelope"></i> {{ 'Inbox' | translate }}
+                    </a>
+                    <a class="dropdown-item" href="javascript:void(0)">
+                        <i class="fa fa-fw fa-gear"></i> {{ 'Settings' | translate }}
+                    </a>
+                    <a (click)="onLoggedout()" [routerLink]="['/login']" class="dropdown-item">
+                        <i class="fa fa-fw fa-power-off"></i> {{ 'Log Out' | translate }}
+                    </a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>

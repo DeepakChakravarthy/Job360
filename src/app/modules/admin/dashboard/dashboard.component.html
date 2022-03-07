@@ -1,0 +1,25 @@
+
+
+<div>
+    <br>
+    <ngx-charts-pie-grid 
+    [view]="[710,300]" 
+      [results]="saleData" >
+    </ngx-charts-pie-grid>
+    
+    <p>Featured Company and Overall Status of the Company are Shown</p>
+    <ngx-charts-bar-vertical [view]="[710,300]" [results]="saleData" [xAxisLabel]="'Company'"
+        [legendTitle]="'Comapny Names'" [yAxisLabel]="'No of Post'" [legend]="true" [showXAxisLabel]="true"
+        [showYAxisLabel]="true" [xAxis]="true" [yAxis]="true" [gradient]="true">
+    </ngx-charts-bar-vertical>
+    
+</div>
+<br>
+
+
+
+Vistor's Count
+<br>
+<a href="https://www.freecounterstat.com" title="page view counters"><img
+        src="https://counter4.stat.ovh/private/freecounterstat.php?c=z7wrat7lphbbz6bbamwu9u2uj2p1mlfc" border="0"
+        title="page view counters" alt="page view counters"></a>
