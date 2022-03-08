@@ -7,6 +7,10 @@ import { AuthGuard } from './shared';
 
 const routes: Routes = [
     {
+        path:'hlogin',
+        loadChildren: () => import('./modules/hlogin/hlogin.module').then((m)=> m.HloginModule)
+    },
+    {
         path: 'adminlayout',
         loadChildren: () => import('./modules/admin/layout.module').then((m) => m.LayoutModule),
         canActivate: [AuthGuard]

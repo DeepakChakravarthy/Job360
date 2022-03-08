@@ -6,6 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CompanyModule } from './modules/company/company.module';
+import {HloginModule} from './modules/hlogin/hlogin.module';
 import { AuthGuard } from './shared';
 import { LanguageTranslationModule } from './shared/modules/language-translation/language-translation.module';
 import { InputsModule } from '@progress/kendo-angular-inputs';
@@ -13,6 +14,8 @@ import { LabelModule } from '@progress/kendo-angular-label';
 import { DateInputsModule } from '@progress/kendo-angular-dateinputs';
 import { ChartsModule } from '@progress/kendo-angular-charts';
 import 'hammerjs';
+import { DropDownsModule } from '@progress/kendo-angular-dropdowns';
+
 
 
 
@@ -31,7 +34,9 @@ import 'hammerjs';
         InputsModule,
         LabelModule,
         DateInputsModule,
-        ChartsModule
+        ChartsModule,
+        DropDownsModule,
+        HloginModule
         
     ],
     declarations: [AppComponent],
