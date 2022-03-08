@@ -1,0 +1,85 @@
+<kendo-stepper #stepper [steps]="steps" stepType="full" [(currentStep)]="currentStep" [style.width.px]="550">
+
+</kendo-stepper>
+
+<form [formGroup]="PersonalDetails" *ngIf="currentStep===0">
+<kendo-formfield>
+    <kendo-floatinglabel text="First Name">
+<kendo-textbox formControlName='firstName'></kendo-textbox>
+</kendo-floatinglabel>
+</kendo-formfield>
+<kendo-formfield>
+    <kendo-floatinglabel text="Last Name">
+    <kendo-textbox formControlName='lastName'></kendo-textbox>
+    </kendo-floatinglabel>
+</kendo-formfield>
+
+<kendo-formfield>
+    <kendo-floatinglabel text="Contact number">
+    <kendo-numerictextbox formControlName='contactNo'>
+
+    </kendo-numerictextbox>
+    </kendo-floatinglabel>
+</kendo-formfield>
+<button type="submit" class="btn btn-info" (click)="nextBtn()">next</button>
+</form>
+
+
+<form [formGroup]="EducationDetails" *ngIf="currentStep===1">
+   <kendo-formfield>
+        <kendo-label text="starting Date"></kendo-label>
+        <kendo-datepicker formControlName="startingDate" format="dd/MM/yyyy" [value]="value"></kendo-datepicker>
+    </kendo-formfield>
+     <kendo-formfield>
+        <kendo-label text="Completion Date:"></kendo-label>
+        <kendo-datepicker formControlName="completionDate"></kendo-datepicker> 
+     
+    </kendo-formfield>  
+       <kendo-formfield>
+        <kendo-floatinglabel text="percentage">
+            <kendo-numerictextbox formControlName="percentage"></kendo-numerictextbox>
+        </kendo-floatinglabel>
+    </kendo-formfield>
+    <kendo-formfield>
+        <kendo-floatinglabel text="Institute Name:">
+            <kendo-textbox formControlName="instituteName" ></kendo-textbox>
+        </kendo-floatinglabel>
+    </kendo-formfield>
+    <kendo-formfield>
+        <kendo-floatinglabel text="degeree">
+            <kendo-textbox formControlName="degereName"></kendo-textbox>
+        </kendo-floatinglabel>
+    </kendo-formfield> 
+</form>
+
+<form [formGroup]="ExperienceDetails" *ngIf="currentStep===2">
+    <kendo-formfield>
+        <kendo-floatinglabel text="Job Title">
+            <kendo-textbox formControlName="jobTitle"></kendo-textbox>
+        </kendo-floatinglabel>
+    </kendo-formfield>
+    <kendo-formfield>
+        <kendo-floatinglabel text="Company Name:">
+            <kendo-textbox formControlName="companyName"></kendo-textbox>
+        </kendo-floatinglabel>
+    </kendo-formfield>
+    <kendo-formfield>
+        <kendo-label text="starting Date"></kendo-label>
+        <kendo-datepicker formControlName="startDate"></kendo-datepicker>
+    </kendo-formfield>
+    <kendo-formfield>
+        <kendo-label text="End date"></kendo-label>
+  <kendo-datepicker formControlName="endingDate"></kendo-datepicker>
+    </kendo-formfield>
+    <kendo-formfield>
+        <kendo-label text="isCurrent"></kendo-label>
+        <input type="checkbox" formControlName="isCurrent"/>
+    </kendo-formfield>
+    <kendo-formfield>
+        <kendo-floatinglabel text="Descripition">
+            <kendo-textarea formControlName="descripition"></kendo-textarea>
+        </kendo-floatinglabel>
+
+        </kendo-formfield>
+
+</form>

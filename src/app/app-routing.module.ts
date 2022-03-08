@@ -3,6 +3,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { CompanyCorePageComponent } from './modules/company/company-core-page/company-core-page.component';
 import { CompanyHomepageComponent } from './modules/company/company-homepage/company-homepage.component';
 import { JobPostPageComponent } from './modules/company/job-post-page/job-post-page.component';
+import { SeekerCorePageComponent } from './modules/seekers/seeker-core-page/seeker-core-page.component';
+import { SeekerHomeComponent } from './modules/seekers/seeker-home/seeker-home.component';
+import { SeekerProfileComponent } from './modules/seekers/seeker-profile/seeker-profile.component';
 import { AuthGuard } from './shared';
 
 
@@ -37,7 +40,20 @@ const routes: Routes = [
             path:'jobPost',
             component:JobPostPageComponent
         }]
+    },{
+        path:'seeker',
+        component:SeekerCorePageComponent,
+        children:[{
+            path:'',
+            component:SeekerHomeComponent
+        },{
+            path:'profile',
+            component:SeekerProfileComponent
+        },
+        
+    ]
     },
+
     { path: 'not-found', loadChildren: () => import('./not-found/not-found.module').then((m) => m.NotFoundModule) },
     { path: '**', redirectTo: 'not-found' }
 ];

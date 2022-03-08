@@ -15,6 +15,9 @@ import { DateInputsModule } from '@progress/kendo-angular-dateinputs';
 import { ChartsModule } from '@progress/kendo-angular-charts';
 import 'hammerjs';
 import { DropDownsModule } from '@progress/kendo-angular-dropdowns';
+import { SeekersModule } from './modules/seekers/seekers.module';
+import { LayoutModule } from '@progress/kendo-angular-layout';
+
 
 
 
@@ -36,7 +39,9 @@ import { DropDownsModule } from '@progress/kendo-angular-dropdowns';
         DateInputsModule,
         ChartsModule,
         DropDownsModule,
-        HloginModule
+        HloginModule,
+        SeekersModule,
+        LayoutModule
         
     ],
     declarations: [AppComponent],
