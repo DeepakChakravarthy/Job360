@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CompanyCorePageComponent } from './modules/company/company-core-page/company-core-page.component';
+import { CompanyHomepageComponent } from './modules/company/company-homepage/company-homepage.component';
+import { JobPostPageComponent } from './modules/company/job-post-page/job-post-page.component';
 import { AuthGuard } from './shared';
 
 const routes: Routes = [
@@ -17,6 +20,18 @@ const routes: Routes = [
     {
         path: 'access-denied',
         loadChildren: () => import('./access-denied/access-denied.module').then((m) => m.AccessDeniedModule)
+    },
+    { 
+        path:'company',
+        component:CompanyCorePageComponent,
+        children:[{
+            path:'',
+            component:CompanyHomepageComponent
+        },
+        {
+            path:'jobPost',
+            component:JobPostPageComponent
+        }]
     },
     { path: 'not-found', loadChildren: () => import('./not-found/not-found.module').then((m) => m.NotFoundModule) },
     { path: '**', redirectTo: 'not-found' }

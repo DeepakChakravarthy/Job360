@@ -1,0 +1,157 @@
+<!-- JOB-POSTING AREA
+<section id="job-posting-area" class="py-5">
+    <div class="container">
+      <h3 class="job-posting-area-heading mb-4 text-center">
+        posting a job
+      </h3>
+      <div class="job-posting-wrapper mx-auto p-3">
+        <form action="#">
+          <div class="form-group">
+            <label for="job-title">Job title:</label>
+            <input
+              id="job-title"
+              class="form-control"
+              name="job-title"
+              type="text"
+            />
+          </div>
+          <div class="form-group">
+            <label for="job-description">Short Job description:</label>
+            <textarea
+              id="job-description"
+              class="form-control"
+              name="job-description"
+              rows="4"
+            ></textarea>
+          </div>
+          <div class="form-group">
+            <label for="job-type">Job type:</label>
+            <input
+              id="job-type"
+              class="form-control"
+              name="job-type"
+              type="text"
+            />
+          </div>
+          <div class="form-group">
+            <label for="employer-name">Employer name:</label>
+            <input
+              id="employer-name"
+              class="form-control"
+              name="employer-name"
+              type="text"
+            />
+          </div>
+          <div class="form-group">
+            <label for="location">Location:</label>
+            <input
+              id="location"
+              class="form-control"
+              name="location"
+              type="text"
+            />
+          </div>
+          <div class="form-group">
+            <label for="job-email">Email:</label>
+            <input
+              id="job-email"
+              class="form-control"
+              name="job-email"
+              type="email"
+            />
+          </div>
+          <div class="form-group">
+            <label for="job-skills">Skills:</label>
+            <input
+              id="job-skills"
+              name="job-skills"
+              type="text"
+            />
+          </div>
+          <button
+            id="job-post-button"
+            class="btn btn-success mt-3"
+            type="submit"
+          >
+            Post the job
+          </button>
+        </form>
+      </div>
+    </div>
+  </section> -->
+  <!-- JOB-POSTING AREA END -->
+
+  <div class="container">
+      <div class="row">
+<div class="col-md-10">
+  <form [formGroup]="jobPostForm" (ngSubmit)="submit()">
+<kendo-formfield>
+  <kendo-floatinglabel text="id" >
+    <kendo-numerictextbox [style.width.px]="400" formControlName="id" ></kendo-numerictextbox>
+  </kendo-floatinglabel>
+</kendo-formfield>
+<kendo-formfield>
+  <kendo-floatinglabel text="Company Id" >
+    <kendo-numerictextbox [style.width.px]="400" formControlName="companyId" ></kendo-numerictextbox>
+  </kendo-floatinglabel>
+</kendo-formfield>
+
+<kendo-formfield>
+  <kendo-floatinglabel text="Title" >
+    <kendo-textbox [style.width.px]="400" formControlName="title" ></kendo-textbox>
+  </kendo-floatinglabel>
+</kendo-formfield>
+
+<kendo-formfield>
+  <kendo-floatinglabel text="Description" >
+    <kendo-textbox [style.width.px]="400" formControlName="description" ></kendo-textbox>
+  </kendo-floatinglabel>
+</kendo-formfield>
+
+<kendo-formfield>
+  <kendo-floatinglabel text="Type" >
+    <kendo-textbox [style.width.px]="400" formControlName="type" ></kendo-textbox>
+  </kendo-floatinglabel>
+</kendo-formfield>
+
+<!-- <kendo-formfield>
+  <kendo-label text="Created At"></kendo-label>
+    <kendo-datepicker [style.width.px]="400" formControlName="createdAt" ></kendo-datepicker>
+
+</kendo-formfield> -->
+  
+ <!-- <kendo-formfield>
+  <kendo-label [for]=datePicker text='Date of birth:' ></kendo-label>
+  <kendo-datepicker [(value)]="values" formControlName="createdAt" format="yyyy/MM/dd" #datePicker ></kendo-datepicker>
+  <p>
+      (use Alt+↓ to open the calendar, ← and → to navigate, ↑ to increment and
+      ↓ to decrement the value)
+    </p>
+</kendo-formfield>  -->
+
+<kendo-formfield>
+  <kendo-floatinglabel text="Location" >
+    <kendo-textbox [style.width.px]="400" formControlName="location" ></kendo-textbox>
+  </kendo-floatinglabel>
+</kendo-formfield>
+
+<kendo-formfield>
+  <kendo-floatinglabel text="Salary" >
+    <kendo-textbox [style.width.px]="400" formControlName="salary" ></kendo-textbox>
+  </kendo-floatinglabel>
+</kendo-formfield>
+
+<kendo-formfield>
+  <kendo-floatinglabel text="No Of Vacancy" >
+    <kendo-textbox [style.width.px]="400" formControlName="noOfVacancy" ></kendo-textbox>
+  </kendo-floatinglabel>
+</kendo-formfield>
+
+<kendo-formfield>
+ <input type="checkbox" #isActive formControlName="isActive">
+  <kendo-label text="Is Active" [for]="isActive"></kendo-label>
+</kendo-formfield>
+</form>
+</div>
+      </div>
+  </div>
