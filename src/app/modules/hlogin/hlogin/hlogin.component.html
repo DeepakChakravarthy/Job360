@@ -1,0 +1,79 @@
+
+    <div class="container-fluid" [ngClass]="{'sign-up-mode':mmm}">
+      <div class="forms-container">
+        <div class="signin-signup">
+          <form action="" class="sign-in-form">
+            <h2 class="title">Login</h2>
+            <div class="input-field">
+              <i class="fas fa-user"></i>
+              <input type="text" name="usuario" autocomplete="username" placeholder="Username" required="yes">
+            </div>
+            <div class="input-field">
+              <i class="fas fa-lock"></i>
+              <input type="password" name="contraseña" autocomplete="current-password" placeholder="Password" id="id_password" required="yes">
+              <i class="far fa-eye" id="togglePassword" style="cursor: pointer;"></i>
+            </div>
+  
+            <input type="submit" value="Sign in" class="btn solid">
+  
+        
+           
+          </form>
+          <form action="" class="sign-up-form">
+            <h2 class="title">Register</h2>
+            
+            <kendo-formfield>
+              <kendo-label text="Email:"></kendo-label>
+              <kendo-textbox></kendo-textbox>
+            </kendo-formfield>
+            <kendo-formfield>
+              <kendo-label text="Password:"></kendo-label>
+              <kendo-textbox></kendo-textbox>
+            </kendo-formfield>
+            <kendo-formfield>
+              <kendo-label text="User Type:"></kendo-label>
+              <kendo-dropdownlist [style.width.px]="190" value="company" [data]="Type"></kendo-dropdownlist>
+            </kendo-formfield>
+              
+  
+            
+            <!-- <div class="input-field">
+              <i class="fas fa-envelope"></i>
+              <input type="email" name="correo" autocomplete="email" placeholder="Email" required="yes">
+            </div>
+            <div class="input-field">
+              <i class="fas fa-lock"></i>
+              <input type="password"  name="contraseña" autocomplete="current-password" placeholder="Password" id="id_reg" required="yes">
+              <i class="far fa-eye" id="toggleReg" style="cursor: pointer;"></i>
+            </div> -->
+  
+            <label class="check">
+              <input type="checkbox" checked="checked">
+              <span class="checkmark">I accept the <a href="terms.html">terms and services</a></span>
+            </label>
+            <input type="submit" value="Create account" class="btn solid">
+  
+          </form>
+        </div>
+      </div>
+      <div class="panels-container">
+        <div class="panel left-panel">
+          <div class="content">
+            <h3>You don't have an account?</h3>
+            <p>Create your account right now to follow people and like publications</p>
+            <button class="btn transparent" (click)="check1()" id="sign-up-btn">Register</button>
+          </div>
+          
+        </div>
+  
+        <div class="panel right-panel">
+          <div class="content">
+            <h3>Already have an account?</h3>
+            <p>Login to see your notifications and post your favorite photos</p>
+            <button class="btn transparent" (click)="check1()" id="sign-in-btn">Sign in</button>
+          </div>
+         
+        </div>
+      </div>
+    </div>
+  
