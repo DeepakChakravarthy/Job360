@@ -1,4 +1,4 @@
-# SB Admin rewritten in Angular 13 and Bootstrap 5
+
 
 Simple Dashboard Admin App built using Angular 13 and Bootstrap 5
 
