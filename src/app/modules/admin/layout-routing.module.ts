@@ -4,7 +4,7 @@ import { LayoutComponent } from './layout.component';
 
 const routes: Routes = [
     {
-        path: '',
+        path: 'adminlayout',
         component: LayoutComponent,
         children: [
             // { path: '', redirectTo: 'dashboard', pathMatch: 'prefix' },
