@@ -22,14 +22,25 @@
     "@ng-bootstrap/ng-bootstrap": "12.0.0",
     "@ngx-translate/core": "14.0.0",
     "@ngx-translate/http-loader": "7.0.0",
+<<<<<<< HEAD
     "@progress/kendo-angular-common": "^2.0.0",
     "@progress/kendo-angular-dropdowns": "^6.0.2",
     "@progress/kendo-angular-inputs": "^8.0.0",
+=======
+    "@progress/kendo-angular-charts": "^6.0.1",
+    "@progress/kendo-angular-common": "^2.0.0",
+    "@progress/kendo-angular-dateinputs": "^6.0.2",
+    "@progress/kendo-angular-inputs": "^8.0.7",
+>>>>>>> 3c7221c5ce434cba806450cabde94aa47e7e6611
     "@progress/kendo-angular-intl": "^3.0.0",
     "@progress/kendo-angular-l10n": "^3.0.0",
     "@progress/kendo-angular-label": "^3.1.3",
     "@progress/kendo-angular-popup": "^4.0.0",
+<<<<<<< HEAD
     "@progress/kendo-drawing": "^1.9.3",
+=======
+    "@progress/kendo-drawing": "^1.1.2",
+>>>>>>> 3c7221c5ce434cba806450cabde94aa47e7e6611
     "@progress/kendo-licensing": "^1.0.2",
     "@progress/kendo-theme-default": "^5.0.0",
     "@swimlane/ngx-charts": "^20.1.0",
@@ -42,7 +53,11 @@
     "rxjs": "7.5.4",
     "tslib": "2.3.1",
     "zone.js": "~0.11.4",
+<<<<<<< HEAD
     "@progress/kendo-angular-treeview": "^6.0.0"
+=======
+    "hammerjs": "^2.0.0"
+>>>>>>> 3c7221c5ce434cba806450cabde94aa47e7e6611
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~13.2.3",
