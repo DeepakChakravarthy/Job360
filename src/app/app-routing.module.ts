@@ -5,6 +5,7 @@ import { CompanyHomepageComponent } from './modules/company/company-homepage/com
 import { JobPostPageComponent } from './modules/company/job-post-page/job-post-page.component';
 import { AuthGuard } from './shared';
 
+
 const routes: Routes = [
     {
         path:'hlogin',
