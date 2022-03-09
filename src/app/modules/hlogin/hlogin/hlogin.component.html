@@ -1,10 +1,20 @@
 
-    <div class="container-fluid" [ngClass]="{'sign-up-mode':mmm}">
+    <div class="container-fluid" [ngClass]="{'sign-up-mode':mmm}" (ngsubmit)="loginForm()">
       <div class="forms-container">
         <div class="signin-signup">
-          <form action="" class="sign-in-form">
+          <form [formGroup]="SignInForm" class="sign-in-form">
             <h2 class="title">Login</h2>
-            <div class="input-field">
+            <kendo-formfield>
+              <kendo-floatinglabel text="Email">
+                <kendo-textbox formControlName="email"></kendo-textbox>
+              </kendo-floatinglabel>
+            </kendo-formfield>
+            <kendo-formfield>
+              <kendo-floatinglabel text="Password">
+                <kendo-textbox formControlName="password"></kendo-textbox>
+              </kendo-floatinglabel>
+            </kendo-formfield>
+            <!-- <div class="input-field">
               <i class="fas fa-user"></i>
               <input type="text" name="usuario" autocomplete="username" placeholder="Username" required="yes">
             </div>
@@ -12,14 +22,14 @@
               <i class="fas fa-lock"></i>
               <input type="password" name="contraseña" autocomplete="current-password" placeholder="Password" id="id_password" required="yes">
               <i class="far fa-eye" id="togglePassword" style="cursor: pointer;"></i>
-            </div>
+            </div> -->
   
-            <input type="submit" value="Sign in" class="btn solid">
+            <input type="submit" (click)="loginForm()" value="Sign in" class="btn solid">
   
         
            
           </form>
-          <form action="" class="sign-up-form">
+          <form  class="sign-up-form">
             <h2 class="title">Register</h2>
             
             <kendo-formfield>
