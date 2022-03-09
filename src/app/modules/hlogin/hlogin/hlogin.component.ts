@@ -25,6 +25,13 @@ export class HloginComponent implements OnInit {
     password:new FormControl('')
   })
 
+  SignUpForm:FormGroup = new FormGroup({
+    username:new FormControl(),
+    email:new FormControl(),
+    password:new FormControl(),
+    type:new FormControl()
+  })
+
   check1(){
     console.log("mlkjnhg")
     this.mmm=!this.mmm;
@@ -34,14 +41,27 @@ export class HloginComponent implements OnInit {
     this.dataService.login(this.SignInForm.value).subscribe(data=>{
       this.userTypeValue=data['type']
       localStorage.setItem('userType',data['type'])
+
       if(this.userTypeValue=='company')
       {
         this.router.navigate(['company'])
       }
+      else if(this.userTypeValue=='seeker')
+      {
+        this.router.navigate(['seeker'])
+      }
+     
+      
     });
 
-    //SignUp()
+   
     
+  }
+
+  signup(){
+    this.dataService.signupServices(this.SignUpForm.value).subscribe(data =>{
+      alert('successfully created')
+    })
   }
 
 }
