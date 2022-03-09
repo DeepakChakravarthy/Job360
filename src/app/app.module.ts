@@ -24,7 +24,6 @@ import { LayoutModule } from '@progress/kendo-angular-layout';
 
 
 
-
 @NgModule({
     imports: [
         CommonModule,
