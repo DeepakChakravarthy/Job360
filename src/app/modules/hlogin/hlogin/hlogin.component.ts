@@ -21,8 +21,5 @@ export class HloginComponent implements OnInit {
     this.mmm=!this.mmm;
   }
 
-  check2(){
-    this.mmm=false;
-  }
 
 }
