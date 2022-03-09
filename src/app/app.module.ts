@@ -17,7 +17,7 @@ import 'hammerjs';
 import { DropDownsModule } from '@progress/kendo-angular-dropdowns';
 import { SeekersModule } from './modules/seekers/seekers.module';
 import { LayoutModule } from '@progress/kendo-angular-layout';
-
+import { SigninsignupServicesService } from './shared/services/signinsignup-services.service';
 
 
 
@@ -45,7 +45,7 @@ import { LayoutModule } from '@progress/kendo-angular-layout';
         
     ],
     declarations: [AppComponent],
-    providers: [AuthGuard],
+    providers: [AuthGuard,SigninsignupServicesService],
     bootstrap: [AppComponent]
 })
 export class AppModule {}

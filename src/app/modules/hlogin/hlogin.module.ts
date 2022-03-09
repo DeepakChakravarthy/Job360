@@ -6,6 +6,7 @@ import { LabelModule } from '@progress/kendo-angular-label';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { InputsModule } from '@progress/kendo-angular-inputs';
 import { DropDownListModule, DropDownsModule } from '@progress/kendo-angular-dropdowns';
+import { SigninsignupServicesService } from '../../shared/services/signinsignup-services.service';
 
 
 @NgModule({
@@ -20,6 +21,9 @@ import { DropDownListModule, DropDownsModule } from '@progress/kendo-angular-dro
     ReactiveFormsModule,
     FormsModule,
     DropDownListModule
+  ],
+  providers: [
+    SigninsignupServicesService
   ],
  exports: [
    HloginComponent
