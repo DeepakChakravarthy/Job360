@@ -1,6 +1,5 @@
+# Job 360
 
 
-
-### Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+*Code Qwality Check*
+[![CodeFactor](https://www.codefactor.io/repository/github/deepakchakravarthy/job360/badge)](https://www.codefactor.io/repository/github/deepakchakravarthy/job360)
