@@ -15,6 +15,7 @@ export class HloginComponent implements OnInit {
   constructor(private dataService:SigninsignupServicesService,private route: ActivatedRoute, private router: Router) { }
   xyz="sign-up-mode";
   mmm=false;
+  userTypeValue:string='';
   Type:Array<string>=['company','seeker','admin']
   ngOnInit(): void {
   }
@@ -30,14 +31,17 @@ export class HloginComponent implements OnInit {
   }
 
   loginForm(){
-    this.dataService.login(this.SignInForm.value).subscribe(data=>
-     this.dataService.userType = data['type']);
-     console.log(this.dataService.userType);
-      if(this.dataService.userType==='company')
+    this.dataService.login(this.SignInForm.value).subscribe(data=>{
+      this.userTypeValue=data['type']
+      localStorage.setItem('userType',data['type'])
+      if(this.userTypeValue=='company')
       {
         this.router.navigate(['company'])
       }
-      console.log("ghj")
+    });
+
+    //SignUp()
+    
   }
 
 }
