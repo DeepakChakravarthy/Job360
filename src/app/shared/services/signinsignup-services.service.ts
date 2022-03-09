@@ -12,9 +12,14 @@ export class SigninsignupServicesService {
   userType:string='';
 
   login(form:any){
-    this.api="https://localhost:5001/api/User/authenticate";
+    this.api="https://job360webapi.azurewebsites.net/api/User/authenticate";
 
     return this._http.post(this.api, form)
+  }
+
+  signupServices(form:any){
+    this.api='https://job360webapi.azurewebsites.net/api/User';
+    return this._http.post(this.api,form)
   }
 
 }
