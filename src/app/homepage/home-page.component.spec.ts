@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
-import { ServerErrorComponent } from './server-error.component';
+import { HomePageComponent } from './home-page.component';
 
-describe('ServerErrorComponent', () => {
-    let component: ServerErrorComponent;
-    let fixture: ComponentFixture<ServerErrorComponent>;
+describe('HomePageComponent', () => {
+    let component: HomePageComponent;
+    let fixture: ComponentFixture<HomePageComponent>;
 
     beforeEach(waitForAsync(() => {
         TestBed.configureTestingModule({
-            declarations: [ServerErrorComponent]
+            declarations: [HomePageComponent]
         }).compileComponents();
     }));
 
     beforeEach(() => {
-        fixture = TestBed.createComponent(ServerErrorComponent);
+        fixture = TestBed.createComponent(HomePageComponent);
         component = fixture.componentInstance;
         fixture.detectChanges();
     });
