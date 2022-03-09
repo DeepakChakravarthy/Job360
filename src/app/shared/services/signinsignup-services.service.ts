@@ -9,7 +9,7 @@ export class SigninsignupServicesService {
   constructor(private _http: HttpClient) { }
 
   api!:string;
-  userType!:string;
+  userType:string='';
 
   login(form:any){
     this.api="https://localhost:5001/api/User/authenticate";
