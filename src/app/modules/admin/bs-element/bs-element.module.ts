@@ -6,8 +6,21 @@ import { PageHeaderModule } from './../../../shared';
 import { BsElementRoutingModule } from './bs-element-routing.module';
 import { BsElementComponent } from './bs-element.component';
 
+
+import {
+    GridModule,
+    PDFModule,
+    ExcelModule,
+} from "@progress/kendo-angular-grid";
+import { ChartsModule } from "@progress/kendo-angular-charts";
+import { InputsModule } from "@progress/kendo-angular-inputs";
+import { AdminserviceService } from '../../../shared/services/adminservice.service';
+
 @NgModule({
-    imports: [CommonModule, BsElementRoutingModule, PageHeaderModule, NgbModule,],
-    declarations: [BsElementComponent]
+    imports: [CommonModule, BsElementRoutingModule, PageHeaderModule, NgbModule,ChartsModule,InputsModule,GridModule,PDFModule,ExcelModule],
+    declarations: [BsElementComponent],
+    providers: [
+        AdminserviceService
+      ]
 })
 export class BsElementModule {}

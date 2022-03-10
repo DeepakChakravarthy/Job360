@@ -18,6 +18,9 @@ import { DropDownsModule } from '@progress/kendo-angular-dropdowns';
 import { SeekersModule } from './modules/seekers/seekers.module';
 import { LayoutModule } from '@progress/kendo-angular-layout';
 import { SigninsignupServicesService } from './shared/services/signinsignup-services.service';
+import { GridModule } from '@progress/kendo-angular-grid';
+import { AdminserviceService } from './shared/services/adminservice.service';
+
 
 
 
@@ -41,10 +44,9 @@ import { SigninsignupServicesService } from './shared/services/signinsignup-serv
         HloginModule,
         SeekersModule,
         LayoutModule,
-        
+        GridModule
     ],
-    declarations: [AppComponent],
-    providers: [AuthGuard,SigninsignupServicesService],
+    providers: [AuthGuard,SigninsignupServicesService,AdminserviceService],
     bootstrap: [AppComponent]
 })
 export class AppModule {}

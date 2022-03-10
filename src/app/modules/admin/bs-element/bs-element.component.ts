@@ -1,65 +1,88 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { routerTransition } from '../../../router.animations';
-//import { Ng2SmartTableModule, LocalDataSource } from 'ng2-smart-table';
-import {SmartTableData} from './smart-table'
+
+
+import { process } from '@progress/kendo-data-query';
+
+import { DataBindingDirective } from '@progress/kendo-angular-grid';
+import { AdminserviceService } from '../../../../app/shared/services/adminservice.service';
+
 @Component({
     selector: 'app-bs-element',
     templateUrl: './bs-element.component.html',
     styleUrls: ['./bs-element.component.scss'],
     animations: [routerTransition()]
 })
-export class BsElementComponent  {
-    
-  settings = {
-    columns: {
-      id: {
-        title: 'ID',
-        filter: false
-      },
-      name: {
-        title: 'Full Name',
-        filter: false
-      },
-      username: {
-        title: 'User Name',
-        filter: false
-      },
-      email: {
-        title: 'Email',
-        filter: false
-      }
-    }
-  };
-  
+export class BsElementComponent implements OnInit {
+  @ViewChild(DataBindingDirective) dataBinding!: DataBindingDirective;
+  public gridData!: any[];
+  public gridView!: any[];
 
-  
- // source: LocalDataSource;
-  
-  constructor() {
+  public mySelection: string[] = [];
+
+  dialogService: any;
+
+  userData:any[]=[];
+
+  constructor(private _service: AdminserviceService) {
+    }
+
+  public ngOnInit(): void {
+    this._service.SeekergetData().subscribe((result) => {
+      if (result != null) {
+        console.log(result);
+        this.gridView = result;
+        this.gridData = result;
+      }
+    });
   }
 
-  // onSearch(query: string = '') {
-  //   this.source.setFilter([
-  //     // fields we want to include in the search
-  //     {
-  //       field: 'id',
-  //       search: query
-  //     },
-  //     {
-  //       field: 'name',
-  //       search: query
-  //     },
-  //     {
-  //       field: 'username',
-  //       search: query
-  //     },
-  //     {
-  //       field: 'email',
-  //       search: query
-  //     }
-  //   ], false);
-    // second parameter specifying whether to perform 'AND' or 'OR' search 
-    // (meaning all columns should contain search query or at least one)
-    // 'AND' by default, so changing to 'OR' by setting false here
-  
+  public onFilter(inputValue: any): void {
+    const input = inputValue.target.value;
+    this.gridView = process(this.gridData, {
+      filter: {
+        logic: 'or',
+        filters: [
+          {
+            field: 'userId',
+            operator: 'contains',
+            value: input,
+          },
+          {
+            field: 'id',
+            operator: 'contains',
+            value: input,
+          },
+          {
+            field: 'companyName',
+            operator: 'contains',
+            value: input,
+          },
+          {
+            field: 'address',
+            operator: 'contains',
+            value: input,
+          },
+          {
+            field: 'contactNo',
+            operator: 'contains',
+            value: input,
+          },
+          {
+            field: 'jobPosted',
+            operator: 'contains',
+            value: input,
+          },
+          {
+            field: 'userAddress',
+            operator: 'contains',
+            value: input,
+          },
+        ],
+      },
+    }).data;
+
+    this.dataBinding.skip = 0;
+  }
+
 }
