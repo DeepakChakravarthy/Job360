@@ -41,6 +41,8 @@ export class HloginComponent implements OnInit {
     this.dataService.login(this.SignInForm.value).subscribe(data=>{
       this.userTypeValue=data['type']
       localStorage.setItem('userType',data['type'])
+      localStorage.setItem('UserId',data['id'])
+      localStorage.setItem('Token',data['token'])
 
       if(this.userTypeValue=='company')
       {
@@ -48,7 +50,7 @@ export class HloginComponent implements OnInit {
       }
       else if(this.userTypeValue=='seeker')
       {
-        this.router.navigate(['seeker'])
+        this.router.navigate(['seeker/profile'])
       }
      
       

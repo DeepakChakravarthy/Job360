@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormGroup, Validators, FormControl} from '@angular/forms';
+import { ProfileServicesService } from '../../../shared/services/profile/profile-services.service';
 
 @Component({
   selector: 'app-seeker-profile',
@@ -8,7 +9,7 @@ import {FormGroup, Validators, FormControl} from '@angular/forms';
 })
 export class SeekerProfileComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dataService:ProfileServicesService) { }
 
   ngOnInit(): void {
   }
@@ -48,7 +49,7 @@ PersonalDetails:FormGroup=new FormGroup({
 firstName:new FormControl(''),
 lastName:new FormControl(''),
 contactNo:new FormControl(''),
-userId:new FormControl(''),
+userId:new FormControl(localStorage.getItem('UserId')),
 jobApplied:new FormControl(0)
 })
 
@@ -71,7 +72,21 @@ descripition:new FormControl(),
 seekerId:new FormControl()
 })
 
-nextBtn(){
-this.currentStep=this.currentStep+1;
+
+personalDetailApiTrigger(){
+  this.dataService.personalDetailsApi(this.PersonalDetails.value)
+    .subscribe(data=>{
+      alert(data)
+  })
 }
+
+nextBtn(){
+  if(this.currentStep==0){
+    this.personalDetailApiTrigger()
+  }
+this.currentStep=this.currentStep+1;
+
+}
+
+
 }

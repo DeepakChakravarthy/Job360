@@ -4,7 +4,7 @@ import { JobPostPageComponent } from './job-post-page/job-post-page.component';
 import { InputsModule } from '@progress/kendo-angular-inputs';
 import { LabelModule } from '@progress/kendo-angular-label';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { DateInputModule } from '@progress/kendo-angular-dateinputs';
+import { DateInputsModule } from '@progress/kendo-angular-dateinputs';
 import { IntlModule } from "@progress/kendo-angular-intl";
 import { CompanyHomepageComponent } from './company-homepage/company-homepage.component';
 import { CompanyNavbarComponent } from './company-navbar/company-navbar.component';
@@ -29,7 +29,7 @@ import { ChartModule } from '@progress/kendo-angular-charts';
     ChartModule,
     InputsModule,
     LabelModule,
-    DateInputModule,
+    DateInputsModule,
     IntlModule
    
   ],
