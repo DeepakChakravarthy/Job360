@@ -84,7 +84,7 @@ nextBtn(){
   if(this.currentStep==0){
     this.personalDetailApiTrigger()
   }
-this.currentStep=this.currentStep+1;
+  this.currentStep=this.currentStep+1;
 
 }
 
