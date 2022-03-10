@@ -50,7 +50,7 @@ export class HloginComponent implements OnInit {
       }
       else if(this.userTypeValue=='seeker')
       {
-        this.router.navigate(['seeker/profile'])
+        this.router.navigate(['seeker'])
       }
      
       
@@ -63,6 +63,7 @@ export class HloginComponent implements OnInit {
   signup(){
     this.dataService.signupServices(this.SignUpForm.value).subscribe(data =>{
       alert('successfully created')
+      
     })
   }
 
