@@ -40,7 +40,7 @@ import { SigninsignupServicesService } from './shared/services/signinsignup-serv
         DropDownsModule,
         HloginModule,
         SeekersModule,
-        LayoutModule
+        LayoutModule,
         
     ],
     declarations: [AppComponent],
