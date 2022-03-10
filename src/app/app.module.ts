@@ -46,6 +46,7 @@ import { AdminserviceService } from './shared/services/adminservice.service';
         LayoutModule,
         GridModule
     ],
+    declarations: [AppComponent],
     providers: [AuthGuard,SigninsignupServicesService,AdminserviceService],
     bootstrap: [AppComponent]
 })
