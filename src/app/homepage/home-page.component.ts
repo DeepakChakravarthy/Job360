@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SigninsignupServicesService } from '../shared/services/signinsignup-services.service';
+import { ActivatedRoute, Router} from '@angular/router'
+
 
 @Component({
     selector: 'app-home',
@@ -7,9 +9,15 @@ import { SigninsignupServicesService } from '../shared/services/signinsignup-ser
     styleUrls: ['./home-page.component.scss']
 })
 export class HomePageComponent implements OnInit {
-    constructor(private dataService: SigninsignupServicesService) {}
+    constructor(private dataService: SigninsignupServicesService,private router:Router) {}
 
     ngOnInit() {
-        console.log(localStorage.getItem('userType'))
+       
     }
+
+    
+    loginNavigation()
+{
+    this.router.navigate(['hlogin'])
+}    
 }

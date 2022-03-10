@@ -10,6 +10,7 @@ import { LayoutModule } from '@progress/kendo-angular-layout';
 import { SeekerCorePageComponent } from './seeker-core-page/seeker-core-page.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ProfileServicesService } from '../../shared/services/profile/profile-services.service';
 
 
 @NgModule({
@@ -32,6 +33,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
     
   ],
+  providers: [ProfileServicesService]
+  ,
   exports: [SeekerHomeComponent,SeekerProfileComponent]
 })
 export class SeekersModule { }
