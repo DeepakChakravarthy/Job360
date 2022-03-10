@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CompanyCorePageComponent } from './modules/company/company-core-page/company-core-page.component';
 import { CompanyHomepageComponent } from './modules/company/company-homepage/company-homepage.component';
+import { CompanyProfileComponent } from './modules/company/company-profile/company-profile.component';
 import { JobPostPageComponent } from './modules/company/job-post-page/job-post-page.component';
 import { SeekerCorePageComponent } from './modules/seekers/seeker-core-page/seeker-core-page.component';
 import { SeekerHomeComponent } from './modules/seekers/seeker-home/seeker-home.component';
@@ -35,6 +36,8 @@ const routes: Routes = [
         children:[{
             path:'',
             component:CompanyHomepageComponent
+        },
+        { path:'profile', component:CompanyProfileComponent
         },
         {
             path:'jobPost',

@@ -12,6 +12,7 @@ import { RouterModule } from '@angular/router';
 import { CompanyCorePageComponent } from './company-core-page/company-core-page.component';
 import "hammerjs";
 import { ChartModule } from '@progress/kendo-angular-charts';
+import { CompanyProfileComponent } from './company-profile/company-profile.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { ChartModule } from '@progress/kendo-angular-charts';
     JobPostPageComponent,
     CompanyHomepageComponent,
     CompanyNavbarComponent,
-    CompanyCorePageComponent
+    CompanyCorePageComponent,
+    CompanyProfileComponent
   ],
   imports: [
     CommonModule,
@@ -33,6 +35,6 @@ import { ChartModule } from '@progress/kendo-angular-charts';
     IntlModule
    
   ],
-  exports: [CompanyCorePageComponent,JobPostPageComponent,CompanyHomepageComponent,CompanyNavbarComponent]
+  exports: [CompanyCorePageComponent,JobPostPageComponent,CompanyHomepageComponent,CompanyNavbarComponent,CompanyProfileComponent]
 })
 export class CompanyModule { }

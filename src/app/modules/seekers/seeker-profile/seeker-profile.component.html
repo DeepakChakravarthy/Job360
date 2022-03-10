@@ -50,6 +50,8 @@
             <kendo-textbox formControlName="degereName"></kendo-textbox>
         </kendo-floatinglabel>
     </kendo-formfield> 
+    <button type="submit" class="btn btn-info" (click)="nextBtn()">next</button>
+
 </form>
 
 <form [formGroup]="ExperienceDetails" *ngIf="currentStep===2">
@@ -81,5 +83,14 @@
         </kendo-floatinglabel>
 
         </kendo-formfield>
+        <button type="submit" class="btn btn-info" (click)="nextBtn()">submit</button>
+
 
 </form>
+
+
+
+
+<!-- <iframe class = "office iframe" [src]='resumepdf' frameborder="0"
+    scrolling="no" marginheight="0" marginwidth="0" role="document" aria-label="Doc document" title="Doc document" >
+</iframe> -->

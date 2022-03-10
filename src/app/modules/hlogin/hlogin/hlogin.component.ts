@@ -62,7 +62,18 @@ export class HloginComponent implements OnInit {
 
   signup(){
     this.dataService.signupServices(this.SignUpForm.value).subscribe(data =>{
-      alert('successfully created')
+      console.log(data)
+      if(data['type']==='seeker'){
+        localStorage.setItem('userType',data['type'])
+        localStorage.setItem('UserId',data['id'])
+        this.router.navigate(['seeker/profile'])
+      }
+      else if(data['type'] == 'company'){
+        localStorage.setItem('userType',data['type'])
+        localStorage.setItem('UserId',data['id'])
+        this.router.navigate(['company/profile'])
+      }
+      
       
     })
   }
