@@ -12,15 +12,19 @@ export class AdminserviceService {
   userType:string='';
 
   CompanygetData(){
-    this.api='https://localhost:5001/api/Company';
+    this.api='https://job360webapi.azurewebsites.net/api/Company';
     return this._http.get<any>(this.api)
   }
   SeekergetData(){
-    this.api='https://localhost:5001/api/Seeker';
+    this.api='https://job360webapi.azurewebsites.net/api/Seeker';
     return this._http.get<any>(this.api)
   }
   JobsGetData(){
-    this.api='https://localhost:5001/api/Job';
+    this.api='https://job360webapi.azurewebsites.net/api/Job';
+    return this._http.get<any>(this.api)
+  }
+  AccountsGetData(){
+    this.api='https://job360webapi.azurewebsites.net/api/User';
     return this._http.get<any>(this.api)
   }
 
