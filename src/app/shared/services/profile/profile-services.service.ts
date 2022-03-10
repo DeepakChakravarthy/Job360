@@ -14,4 +14,15 @@ export class ProfileServicesService {
     this.api= 'https://job360webapi.azurewebsites.net/api/Seeker';
     return this._http.post(this.api, form)
   }
+
+  EducationDetailsApi(form:any){
+    this.api='https://job360webapi.azurewebsites.net/api/SeekerQualification';
+    return this._http.post(this.api, form)
+  }
+
+  CompanyProfileApi(form:any){
+    this.api='https://job360webapi.azurewebsites.net/api/Company';
+    return this._http.post(this.api, form)
+  }
+
 }

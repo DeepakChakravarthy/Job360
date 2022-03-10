@@ -14,6 +14,7 @@ export class SeekerProfileComponent implements OnInit {
   ngOnInit(): void {
   }
   public currentStep = 0;
+  public resumepdf:string='https://job360store.blob.core.windows.net/file-container/Scaffoldcommands.pdf'
 
   value=new Date();
 
@@ -55,11 +56,11 @@ jobApplied:new FormControl(0)
 
 EducationDetails:FormGroup = new FormGroup({
 startingDate:new FormControl(''),
-completionDate:new FormControl('',Validators.required),
-percentage:new FormControl('',Validators.required),
-instituteName:new FormControl('',Validators.required),
-degereName:new FormControl('',Validators.required),
-SeekerId:new FormControl('',Validators.required)
+completionDate:new FormControl(''),
+percentage:new FormControl(''),
+instituteName:new FormControl(''),
+degereName:new FormControl(''),
+SeekerId:new FormControl(localStorage.getItem('UserId'))
 })
 
 ExperienceDetails:FormGroup = new FormGroup({
@@ -69,7 +70,7 @@ startDate:new FormControl(),
 endingDate:new FormControl(),
 isCurrent:new FormControl(),
 descripition:new FormControl(),
-seekerId:new FormControl()
+seekerId:new FormControl(localStorage.getItem('UserId'))
 })
 
 
@@ -80,12 +81,38 @@ personalDetailApiTrigger(){
   })
 }
 
+EducationDetailsApiTrigger(){
+  console.log(this.EducationDetails.value)
+  this.dataService.EducationDetailsApi(this.EducationDetails.value).subscribe(data=>{
+    console.log(data);
+  })
+}
+
 nextBtn(){
   if(this.currentStep==0){
     this.personalDetailApiTrigger()
   }
+  else if(this.currentStep===1){
+    this.EducationDetailsApiTrigger()
+  }
+  else if(this.currentStep===2){
+
+  }
   this.currentStep=this.currentStep+1;
 
+}
+
+pdf(){
+//   let file = new Blob([data], { type: 'application/pdf' })
+//           var fileURL = URL.createObjectURL(file);
+// // if you want to open PDF in new tab
+//           window.open(fileURL); 
+//           var a         = document.createElement('a');
+//           a.href        = fileURL; 
+//           a.target      = '_blank';
+//           a.download    = 'bill.pdf';
+//           document.body.appendChild(a);
+//           a.click();
 }
 
 
