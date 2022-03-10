@@ -1,19 +1,19 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit,ViewChild} from '@angular/core';
+import { routerTransition } from '../../../router.animations';
+
 
 import { process } from '@progress/kendo-data-query';
 
 import { DataBindingDirective } from '@progress/kendo-angular-grid';
-import { AdminserviceService } from '../../../../../shared/services/adminservice.service';
-
-// import { adminServices } from 'src/app/shared/services/adminServices';
-
+import { AdminserviceService } from '../../../../app/shared/services/adminservice.service';
 
 @Component({
-  selector: 'app-ctable',
-  templateUrl: './ctable.component.html',
-  styleUrls: ['./ctable.component.scss']
+  selector: 'app-jobpost',
+  templateUrl: './jobpost.component.html',
+  styleUrls: ['./jobpost.component.scss'],
+  animations: [routerTransition()]
 })
-export class CtableComponent implements OnInit {
+export class JobpostComponent implements OnInit {
   @ViewChild(DataBindingDirective) dataBinding!: DataBindingDirective;
   public gridData!: any[];
   public gridView!: any[];
@@ -28,7 +28,7 @@ export class CtableComponent implements OnInit {
     }
 
   public ngOnInit(): void {
-    this._service.CompanygetData().subscribe((result) => {
+    this._service.JobsGetData().subscribe((result) => {
       if (result != null) {
         console.log(result);
         this.gridView = result;

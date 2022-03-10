@@ -6,42 +6,26 @@ import { PageHeaderModule } from '../../../shared';
 
 import { BsComponentRoutingModule } from './bs-component-routing.module';
 import { BsComponentComponent } from './bs-component.component';
-import {
-    AlertComponent,
-    ButtonsComponent,
-    CollapseComponent,
-    DatePickerComponent,
-    DropdownComponent,
-    ModalComponent,
-    PaginationComponent,
-    PopOverComponent,
-    ProgressbarComponent,
-    RatingComponent,
-    TabsComponent,
-    TimepickerComponent,
-    TooltipComponent
-} from './components';
 import { CtableComponent } from './components/ctable/ctable.component';
+
+import {
+    GridModule,
+    PDFModule,
+    ExcelModule,
+} from "@progress/kendo-angular-grid";
+import { ChartsModule } from "@progress/kendo-angular-charts";
+import { InputsModule } from "@progress/kendo-angular-inputs";
+import { AdminserviceService } from '../../../shared/services/adminservice.service';
 
 
 @NgModule({
-    imports: [CommonModule, BsComponentRoutingModule, FormsModule, ReactiveFormsModule, NgbModule, PageHeaderModule],
+    imports: [CommonModule, BsComponentRoutingModule, FormsModule, ReactiveFormsModule, NgbModule, PageHeaderModule,ChartsModule,InputsModule,GridModule,PDFModule,ExcelModule],
     declarations: [
         BsComponentComponent,
-        ButtonsComponent,
-        AlertComponent,
-        ModalComponent,
-        CollapseComponent,
-        DatePickerComponent,
-        DropdownComponent,
-        PaginationComponent,
-        PopOverComponent,
-        ProgressbarComponent,
-        TabsComponent,
-        RatingComponent,
-        TooltipComponent,
-        TimepickerComponent,
         CtableComponent,
-    ]
+    ],
+    providers: [
+        AdminserviceService
+      ]
 })
-export class BsComponentModule {}
+export class BsComponentModule { }
