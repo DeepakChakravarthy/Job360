@@ -28,7 +28,7 @@ export class AccountsComponent implements OnInit {
     }
 
   public ngOnInit(): void {
-    this._service.SeekergetData().subscribe((result) => {
+    this._service.AccountsGetData().subscribe((result) => {
       if (result != null) {
         console.log(result);
         this.gridView = result;
@@ -44,7 +44,7 @@ export class AccountsComponent implements OnInit {
         logic: 'or',
         filters: [
           {
-            field: 'userId',
+            field: 'username',
             operator: 'contains',
             value: input,
           },
@@ -54,27 +54,17 @@ export class AccountsComponent implements OnInit {
             value: input,
           },
           {
-            field: 'companyName',
+            field: 'email',
             operator: 'contains',
             value: input,
           },
           {
-            field: 'address',
+            field: 'type',
             operator: 'contains',
             value: input,
           },
           {
-            field: 'contactNo',
-            operator: 'contains',
-            value: input,
-          },
-          {
-            field: 'jobPosted',
-            operator: 'contains',
-            value: input,
-          },
-          {
-            field: 'userAddress',
+            field: 'password',
             operator: 'contains',
             value: input,
           },

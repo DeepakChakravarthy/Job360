@@ -34,40 +34,45 @@
   
       <!-- <kendo-grid-column-group title="User Details" [columnMenu]="false"> -->
         <kendo-grid-column
-          field="id"
-          title="User Id"
+          field="companyId"
+          title="Company ID"
           [width]="140"
         ></kendo-grid-column>
         <kendo-grid-column
-          field="userId"
-          title="User ID"
+          field="createdAt"
+          title="Posted at"
           [width]="180"
         ></kendo-grid-column>
         <kendo-grid-column
-          field="firstName"
-          title="First Name"
+          field="title"
+          title="Job Title"
           [width]="180"
         ></kendo-grid-column>
         <kendo-grid-column
-          field="lastName"
-          title="Last Name"
+          field="type"
+          title="Job Type"
           [width]="180"
         ></kendo-grid-column>
         <kendo-grid-column
-          field="jobApplied"
-          title="Jobs Applied"
+          field="location"
+          title="Jobs Location"
           [width]="180"
         ></kendo-grid-column>
         <kendo-grid-column
-          field="contactNo"
-          title="Mobile Number"
+          field="isActive"
+          title="Job Status"
           [width]="180"
         ></kendo-grid-column>
-        <!-- <kendo-grid-column
-          field="roleId"
-          title="Role"
+        <kendo-grid-column
+          field="noOfVacancy"
+          title="No.of Vacancy"
           [width]="120"
-        ></kendo-grid-column> -->
+        ></kendo-grid-column>
+        <kendo-grid-column
+          field="salary"
+          title="Salary"
+          [width]="120"
+        ></kendo-grid-column>
       <!-- </kendo-grid-column-group> -->
       <!-- <kendo-grid-column-group title="Other Details" [columnMenu]="false">
         <kendo-grid-column
