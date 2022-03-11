@@ -13,6 +13,7 @@ import { CompanyCorePageComponent } from './company-core-page/company-core-page.
 import "hammerjs";
 import { ChartModule } from '@progress/kendo-angular-charts';
 import { CompanyProfileComponent } from './company-profile/company-profile.component';
+import { JobServicesService } from '../../shared/services/jobs/job-services.service';
 
 
 @NgModule({
@@ -35,6 +36,7 @@ import { CompanyProfileComponent } from './company-profile/company-profile.compo
     IntlModule
    
   ],
+  providers: [JobServicesService],
   exports: [CompanyCorePageComponent,JobPostPageComponent,CompanyHomepageComponent,CompanyNavbarComponent,CompanyProfileComponent]
 })
 export class CompanyModule { }

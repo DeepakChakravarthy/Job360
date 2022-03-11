@@ -42,7 +42,8 @@
     width: 2000px;
     height: 2000px;
     border-radius: 50%;
-    background: linear-gradient(-45deg, #4481eb, #04befe);
+
+    background: linear-gradient(-45deg, #5161ce, #5161ce);
     top: -10%;
     right: 48%;
     transform: translateY(-50%);
@@ -151,7 +152,7 @@
   }
   
   .key:hover {
-    color: #4d84e2;
+    background-color: #5161ce;
   }
   
   .pass {
@@ -160,7 +161,7 @@
   }
   
   .pass:hover {
-    color: #4d84e2;
+    background-color: #5161ce;
   }
   
   #togglePassword {
@@ -195,7 +196,7 @@
     outline: none;
     border-radius: 49px;
     cursor: pointer;
-    background-color: #5995fd;
+    background-color: #5161ce;
     color: #fff;
     text-transform: uppercase;
     font-weight: 600;
@@ -204,7 +205,7 @@
   }
   
   .btn:hover {
-    background-color: #4d84e2;
+    background-color: #5161ce;
   }
   
   .check {

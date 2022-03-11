@@ -62,7 +62,7 @@ completionDate:new FormControl(''),
 percentage:new FormControl(''),
 instituteName:new FormControl(''),
 degereName:new FormControl(''),
-SeekerId:new FormControl(0)
+SeekerId:new FormControl(1)
 })
 
 ExperienceDetails:FormGroup = new FormGroup({
@@ -96,7 +96,7 @@ EducationDetailsApiTrigger(){
     console.log(this.eDate,'gbgfvd');
 
 
-     this.EducationDetails.setValue({
+     this.EducationDetails.patchValue({
 
    startingDate:this.sDate,completionDate:this.eDate})
 
@@ -106,9 +106,11 @@ EducationDetailsApiTrigger(){
 
    
 
-  //this.dataService.EducationDetailsApi(this.EducationDetails.value).subscribe(data=>{
-   // console.log(data);
-  //})
+  this.dataService.EducationDetailsApi(this.EducationDetails.value).subscribe(data=>{
+    console.log(data);
+  },error=>{
+    console.log(error);
+  })
 }
 
 nextBtn(){

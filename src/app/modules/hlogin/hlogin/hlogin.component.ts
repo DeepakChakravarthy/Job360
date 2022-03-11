@@ -3,7 +3,7 @@ import { ThemeService } from 'ng2-charts';
 import { SigninsignupServicesService } from '../../../shared/services/signinsignup-services.service';
 import {FormGroup,FormControl} from '@angular/forms'
 import { ActivatedRoute, Router} from '@angular/router'
-
+import { Notyf } from 'notyf';
 
 @Component({
   selector: 'app-hlogin',
@@ -16,7 +16,34 @@ export class HloginComponent implements OnInit {
   xyz="sign-up-mode";
   mmm=false;
   userTypeValue:string='';
-  Type:Array<string>=['company','seeker','admin']
+  Type:Array<string>=['company','seeker','admin'];
+  notyf = new Notyf({
+    duration: 1000,
+    position: {
+      x: 'right',
+      y: 'top',
+    },
+    types: [
+      {
+        type: 'warning',
+        background: 'orange',
+                icon: {
+          className: 'material-icons',
+          tagName: 'i',
+          text: 'warning'
+        }
+      },
+      {
+        type: 'error',
+        background: 'indianred',
+        duration: 2000,
+        dismissible: true,
+
+      }
+    ]
+  });
+
+
   ngOnInit(): void {
   }
   
@@ -52,8 +79,9 @@ export class HloginComponent implements OnInit {
       {
         this.router.navigate(['seeker'])
       }
-     
-      
+    },
+    error=>{
+        this.notyf.error('Check your Email/Password')
     });
 
    
@@ -61,8 +89,9 @@ export class HloginComponent implements OnInit {
   }
 
   signup(){
-    this.dataService.signupServices(this.SignUpForm.value).subscribe(data =>{
-      console.log(data)
+    this.dataService.signupServices(this.SignUpForm.value).subscribe(
+      data => {
+        console.log(data)
       if(data['type']==='seeker'){
         localStorage.setItem('userType',data['type'])
         localStorage.setItem('UserId',data['id'])
@@ -73,9 +102,11 @@ export class HloginComponent implements OnInit {
         localStorage.setItem('UserId',data['id'])
         this.router.navigate(['company/profile'])
       }
-      
-      
-    })
+      }, error => {
+        console.log(error);
+        
+      }
+    )
   }
 
 }

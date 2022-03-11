@@ -13,7 +13,7 @@ export class JobServicesService {
   }
 
   createJobPostApi(form:any){
-    this.api='https://job360webapi.azurewebsites.net/api/Job';
+    this.api='https://localhost:5001/api/Job';
     return this._http.post(this.api,form)
   }
   

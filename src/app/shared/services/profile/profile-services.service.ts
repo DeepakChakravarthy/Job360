@@ -16,7 +16,8 @@ export class ProfileServicesService {
   }
 
   EducationDetailsApi(form:any){
-    this.api='https://job360webapi.azurewebsites.net/api/SeekerQualification';
+    //this.api='https://job360webapi.azurewebsites.net/api/SeekerQualification';
+    this.api='https://localhost:5001/api/SeekerQualification';
     return this._http.post(this.api, form)
   }
 
