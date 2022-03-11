@@ -6,6 +6,7 @@ import { CompanyProfileComponent } from './modules/company/company-profile/compa
 import { JobPostPageComponent } from './modules/company/job-post-page/job-post-page.component';
 import { SeekerCorePageComponent } from './modules/seekers/seeker-core-page/seeker-core-page.component';
 import { SeekerHomeComponent } from './modules/seekers/seeker-home/seeker-home.component';
+import { SeekerProfileViewComponent } from './modules/seekers/seeker-profile-view/seeker-profile-view.component';
 import { SeekerProfileComponent } from './modules/seekers/seeker-profile/seeker-profile.component';
 import { AuthGuard } from './shared';
 
@@ -53,6 +54,10 @@ const routes: Routes = [
             path:'profile',
             component:SeekerProfileComponent
         },
+        {
+            path:'ViewProfile',
+            component:SeekerProfileViewComponent
+        }
         
     ]
     },

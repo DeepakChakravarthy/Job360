@@ -16,8 +16,13 @@ export class ProfileServicesService {
   }
 
   EducationDetailsApi(form:any){
-    //this.api='https://job360webapi.azurewebsites.net/api/SeekerQualification';
-    this.api='https://localhost:5001/api/SeekerQualification';
+    this.api='https://job360webapi.azurewebsites.net/api/SeekerQualification';
+    //this.api='https://localhost:5001/api/SeekerQualification';
+    return this._http.post(this.api, form)
+  }
+
+  ExperienceDetailsApi(form:any){
+    this.api='https://job360webapi.azurewebsites.net/api/Experience';
     return this._http.post(this.api, form)
   }
 
@@ -26,4 +31,13 @@ export class ProfileServicesService {
     return this._http.post(this.api, form)
   }
 
+  userProfile(){
+    this.api='https://job360webapi.azurewebsites.net/api/seeker'+localStorage.getItem('UserId');
+    return this._http.get(this.api)
+  }
+
+  userReterive(){
+    this.api='https://job360webapi.azurewebsites.net/api/Seeker/retrieveseekerdata'+localStorage.getItem('UserId')
+    return this._http.get(this.api)
+  }
 }

@@ -66,13 +66,15 @@
      </kendo-formfield>
      <kendo-formfield>
          <kendo-label text="starting Date"></kendo-label>
-         <input type="date" class="k-datepicker k-input ng-untouched ng-pristine ng-valid k-input-md k-rounded-md k-input-solid" formControlName="startDate">
+         <input onfocus="(this.type='date')" onblur="(this.type='text')" class="k-datepicker k-input ng-untouched ng-pristine ng-valid k-input-md k-rounded-md k-input-solid" formControlName="startDate">
  
          <!-- <kendo-datepicker formControlName="startDate"></kendo-datepicker> -->
      </kendo-formfield>
      <kendo-formfield>
-         <kendo-label text="End date"></kendo-label>
-         <input type="date" class="k-datepicker k-input ng-untouched ng-pristine ng-valid k-input-md k-rounded-md k-input-solid" formControlName="endingDate">
+         <kendo-floatinglabel text="End date">
+            <input onfocus="(this.type='date')" onblur="(this.type='text')" class="k-datepicker k-input ng-untouched ng-pristine ng-valid k-input-md k-rounded-md k-input-solid" formControlName="endingDate">
+
+         </kendo-floatinglabel>
    <!-- <kendo-datepicker formControlName="endingDate"></kendo-datepicker> -->
      </kendo-formfield>
      <kendo-formfield>
