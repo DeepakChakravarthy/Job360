@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { ProfileServicesService } from '../../../shared/services/profile/profile-services.service';
+import { ActivatedRoute, Router} from '@angular/router'
 
 @Component({
   selector: 'app-company-profile',
@@ -8,7 +10,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class CompanyProfileComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router, private dataService:ProfileServicesService) { }
 
   ngOnInit(): void {
   }
@@ -21,4 +23,12 @@ export class CompanyProfileComponent implements OnInit {
     contactNo: new FormControl(),
     jobPosted: new FormControl(0)
   })
+
+
+  companyProfileApiTrigger(){
+    this.dataService.CompanyProfileApi(this.companyProfileForm.value).subscribe(data => {
+      console.log(data);
+      this.router.navigate(['company'])
+    })
+  }
 }
