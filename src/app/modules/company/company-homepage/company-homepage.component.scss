@@ -4,3 +4,14 @@
     background-color:aqua;
     border-radius:25px;
 }
+.custom { display: flex; }
+.lp {margin-left: auto;}
+
+.layout {
+    width: 10%;
+  
+    display: flex;
+    gap: 20px;
+  }
+  
+  .grow1 { flex-grow: 1; }

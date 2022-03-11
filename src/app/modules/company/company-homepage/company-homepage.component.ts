@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { IntlService } from "@progress/kendo-angular-intl";
 import { LegendLabelsContentArgs } from "@progress/kendo-angular-charts";
-
-
+import { DataBindingDirective} from "@progress/kendo-angular-grid";
+import { AdminserviceService } from '../../../shared/services/adminservice.service';
+import { process } from '@progress/kendo-data-query';
 
 @Component({
   selector: 'app-company-homepage',
@@ -18,8 +19,17 @@ public pieData: any[] = [
   { category: "55-64", value: 0.0911 },
   { category: "65+", value: 0.0933 },
 ];
+@ViewChild(DataBindingDirective) dataBinding!: DataBindingDirective;
+public gridData!: any[];
+public gridView!: any[];
 
-  constructor(private intl:IntlService) { 
+public mySelection: string[] = [];
+
+dialogService: any;
+
+userData:any[]=[];
+
+  constructor(private intl:IntlService,private _service:AdminserviceService) { 
     this.labelContent = this.labelContent.bind(this);
   }
 
@@ -30,6 +40,51 @@ public pieData: any[] = [
     )}`}
 
   ngOnInit(): void {
+    this._service.AccountsGetData().subscribe((result) => {
+      if (result != null) {
+        console.log(result);
+        this.gridView = result;
+        this.gridData = result;
   }
+});
+}
+public onFilter(inputValue: any): void {
+  const input = inputValue.target.value;
+  this.gridView = process(this.gridData, {
+    filter: {
+      logic: 'or',
+      filters: [
+        {
+          field: 'username',
+          operator: 'contains',
+          value: input,
+        },
+        {
+          field: 'id',
+          operator: 'contains',
+          value: input,
+        },
+        {
+          field: 'email',
+          operator: 'contains',
+          value: input,
+        },
+        {
+          field: 'type',
+          operator: 'contains',
+          value: input,
+        },
+        {
+          field: 'password',
+          operator: 'contains',
+          value: input,
+        },
+      ],
+    },
+  }).data;
+
+  this.dataBinding.skip = 0;
+}
 
 }
+
