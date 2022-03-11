@@ -69,95 +69,20 @@
         </aside>
         <div class="col-md-5 offset-md-1">
             <ul class="job-list">
-                <li class="job-preview">
+                <li class="job-preview" *ngFor="let data of jobListData;let i =index">
                     <div class="content float-left">
                         <h4 class="job-title">
-                            Senior Web Designer
+                            {{data.title}}
                         </h4>
                         <h5 class="company">
-                            Seattle, WA
+                            {{data.location}}
                         </h5>
                     </div>
-                    <a href="#" class="btn btn-apply float-sm-right float-xs-left">
+                    <a class="btn btn-apply float-sm-right float-xs-left">
                         View More
                     </a>
                 </li>
-                <li class="job-preview">
-                    <div class="content float-left">
-                        <h4 class="job-title">
-                            Senior Web Designer
-                        </h4>
-                        <h5 class="company">
-                            Seattle, WA
-                        </h5>
-                    </div>
-                    <a href="#" class="btn btn-apply float-sm-right float-xs-left">
-                        View More
-                    </a>
-                </li>
-                <li class="job-preview">
-                    <div class="content float-left">
-                        <h4 class="job-title">
-                            Senior Web Designer
-                        </h4>
-                        <h5 class="company">
-                            Seattle, WA
-                        </h5>
-                    </div>
-                    <a href="#" class="btn btn-apply float-sm-right float-xs-left">
-                        View More
-                    </a>
-                </li>
-                <li class="job-preview">
-                    <div class="content float-left">
-                        <h4 class="job-title">
-                            Senior Web Designer
-                        </h4>
-                        <h5 class="company">
-                            Seattle, WA
-                        </h5>
-                    </div>
-                    <a href="#" class="btn btn-apply float-sm-right float-xs-left">
-                        View More
-                    </a>
-                </li>
-                <li class="job-preview">
-                    <div class="content float-left">
-                        <h4 class="job-title">
-                            Senior Web Designer
-                        </h4>
-                        <h5 class="company">
-                            Seattle, WA
-                        </h5>
-                    </div>
-                    <a href="#" class="btn btn-apply float-sm-right float-xs-left">
-                        View More
-                    </a>
-                </li>
-                <li class="job-preview">
-                    <div class="content float-left">
-                        <h4 class="job-title">
-                            Senior Web Designer
-                        </h4>
-                        <h5 class="company">
-                            Seattle, WA
-                        </h5>
-                    </div>
-                    <a href="#" class="btn btn-apply float-sm-right float-xs-left">
-                        View More
-                    </a>
-                </li>
-                
-            
             </ul>
-        </div>
-        <div class="col-md-4">
-            <div class="h-100" style="background-color:red">
-       
-                    <kendo-label text="kokok"></kendo-label>
-                  
-            
-        </div>
         </div>
 
 

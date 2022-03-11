@@ -28,11 +28,11 @@
 <form [formGroup]="EducationDetails" *ngIf="currentStep===1">
    <kendo-formfield>
         <kendo-label text="starting Date"></kendo-label>
-        <kendo-datepicker formControlName="startingDate" format="dd/MM/yyyy" [value]="value"></kendo-datepicker>
+        <kendo-datepicker formControlName="startingDate" format="dd-MM-yyyy" ></kendo-datepicker>
     </kendo-formfield>
      <kendo-formfield>
-        <kendo-label text="Completion Date:"></kendo-label>
-        <kendo-datepicker formControlName="completionDate"></kendo-datepicker> 
+        <kendo-label text="Completion Date"></kendo-label>
+        <kendo-datepicker  formControlName="completionDate" format='dd-MM-yyyy' ></kendo-datepicker> 
      
     </kendo-formfield>  
        <kendo-formfield>

@@ -17,6 +17,8 @@ export class SeekerProfileComponent implements OnInit {
   public resumepdf:string='https://job360store.blob.core.windows.net/file-container/Scaffoldcommands.pdf'
 
   value=new Date();
+  sDate!:any;
+  eDate!:any;
 
   private sumbitted = false;
 
@@ -60,7 +62,7 @@ completionDate:new FormControl(''),
 percentage:new FormControl(''),
 instituteName:new FormControl(''),
 degereName:new FormControl(''),
-SeekerId:new FormControl(localStorage.getItem('UserId'))
+SeekerId:new FormControl(0)
 })
 
 ExperienceDetails:FormGroup = new FormGroup({
@@ -75,6 +77,7 @@ seekerId:new FormControl(localStorage.getItem('UserId'))
 
 
 personalDetailApiTrigger(){
+  
   this.dataService.personalDetailsApi(this.PersonalDetails.value)
     .subscribe(data=>{
       alert(data)
@@ -83,9 +86,29 @@ personalDetailApiTrigger(){
 
 EducationDetailsApiTrigger(){
   console.log(this.EducationDetails.value)
-  this.dataService.EducationDetailsApi(this.EducationDetails.value).subscribe(data=>{
-    console.log(data);
-  })
+  this.sDate=this.EducationDetails.value["startingDate"];
+  this.eDate=this.EducationDetails.value["completionDate"];
+
+    this.sDate=this.sDate.toLocaleDateString("nl",{day:"2-digit",month:"2-digit", year:"numeric"})
+    this.eDate=this.eDate.toLocaleDateString("nl",{day:"2-digit",month:"2-digit", year:"numeric"})
+
+    console.log('xsx',this.sDate);
+    console.log(this.eDate,'gbgfvd');
+
+
+     this.EducationDetails.setValue({
+
+   startingDate:this.sDate,completionDate:this.eDate})
+
+   //Completion Date format for EducationDetails
+
+
+
+   
+
+  //this.dataService.EducationDetailsApi(this.EducationDetails.value).subscribe(data=>{
+   // console.log(data);
+  //})
 }
 
 nextBtn(){
@@ -102,6 +125,10 @@ nextBtn(){
 
 }
 
+ExperienceDetailsApiTrigger(){
+  
+}
+
 pdf(){
 //   let file = new Blob([data], { type: 'application/pdf' })
 //           var fileURL = URL.createObjectURL(file);
@@ -115,5 +142,16 @@ pdf(){
 //           a.click();
 }
 
+//this.sDate=this.EducationDetailForm.value["startingDate"];
+
+    // this.sDate=this.sDate.toLocaleDateString("nl",{day:"2-digit",month:"2-digit", year:"numeric"})
+
+    //     //this.console.log(this.sDate);
+
+    //     this.EducationDetailForm.setValue({
+
+    //       startingDate:this.sDate
+
+    //     })
 
 }
