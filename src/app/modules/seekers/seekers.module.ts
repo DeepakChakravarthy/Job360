@@ -11,6 +11,7 @@ import { SeekerCorePageComponent } from './seeker-core-page/seeker-core-page.com
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProfileServicesService } from '../../shared/services/profile/profile-services.service';
+import { JobServicesService } from '../../shared/services/jobs/job-services.service';
 
 
 @NgModule({
@@ -30,10 +31,9 @@ import { ProfileServicesService } from '../../shared/services/profile/profile-se
     RouterModule,
     FormsModule,
     ReactiveFormsModule,
-
     
   ],
-  providers: [ProfileServicesService]
+  providers: [ProfileServicesService,    JobServicesService  ]
   ,
   exports: [SeekerHomeComponent,SeekerProfileComponent]
 })

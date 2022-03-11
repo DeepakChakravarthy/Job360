@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import {JobServicesService} from '../../../shared/services/jobs/job-services.service';
 
 @Component({
   selector: 'app-job-post-page',
@@ -8,17 +9,16 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class JobPostPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dataService: JobServicesService) { }
   values:Date=new Date();
   ngOnInit(): void {
   }
 
   jobPostForm:FormGroup=new FormGroup({
-    id:new FormControl('',[Validators.required]),
     companyId:new FormControl('',[Validators.required]),
     title:new FormControl('',[Validators.required]),
     description:new FormControl('',[Validators.required]),
-    type:new FormControl('',[Validators.required]),
+    type:new FormControl(this.values.toLocaleDateString("nl",{day:"2-digit",month:"2-digit", year:"numeric"})),
     createdAt:new FormControl('',[Validators.required]),
     location:new FormControl('',[Validators.required]),
     salary:new FormControl('',[Validators.required]),
@@ -27,7 +27,10 @@ export class JobPostPageComponent implements OnInit {
   })
 
   submit(){
-    console.log('jbh')
+    this.dataService.createJobPostApi(this.jobPostForm.value).subscribe(data =>{
+      console.log(data)
+      
+  })
   }
 
 }
