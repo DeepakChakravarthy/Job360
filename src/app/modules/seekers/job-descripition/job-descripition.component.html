@@ -1,0 +1,79 @@
+<div class="contaner-md-12 pl-5 mr-5">
+    <div class="row">
+        <div class="col-md-10 JobHero">
+            <h1>{{jobdescripitiondata['title']}}</h1>
+            <!-- <h2><span>AT</span><span class="CompanyLabel ml-2"><u>KOVAI.CO</u></span></h2> -->
+            
+        </div>
+        <div class="col-md-2 img-responsive">
+   
+        </div>
+       
+    </div>
+    <div class="row">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+            <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+          </svg>
+          <p>{{jobdescripitiondata['location'] }}.</p>
+          <!-- Facebook --><div class="social-wrapper" style=" float:right;">
+            <a class="ml-2 mr-2 "style="color: #3b5998;" href="#!" role="button"
+            ><i class="fab fa-facebook-f fa-lg"></i
+            ></a>
+            
+            <!-- Twitter -->
+            <a class="mr-2" style="color: #55acee;" href="#!" role="button"
+            ><i class="fab fa-twitter fa-lg"></i
+            ></a>
+            
+            <!-- Google -->
+            <a style="color: #dd4b39;" href="#!" role="button"
+            ><i class="fab fa-google fa-lg"></i
+            ></a>
+            
+            
+          </div>
+
+    </div>
+  
+ <hr>
+
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <h1>
+                    Category:{{jobdescripitiondata['type']}}
+                </h1>
+                <p>Salary:{{jobdescripitiondata['salary']}}</p>
+                  <div class="card jobDetails">
+               <ul>
+                   <li>
+                       No of Vacancies: {{jobdescripitiondata['noOfVacancy']}}
+                   </li>
+                   <li>
+                       Is Active:{{jobdescripitiondata['isActive']}}
+                   </li>
+                   <li>
+                       Created At: {{jobdescripitiondata['createdAt']}}
+                   </li>
+               </ul>
+             </div>
+                </div>
+           
+            </div>
+            <div class="col-md-12">
+                <div class="card">
+                    <h2>ABOUT DEVSKILL</h2>
+                    <ul><li>
+                        {{jobdescripitiondata['description']}}
+                    </li>
+</ul>
+                    <button class="btn btn-primary">Apply</button>
+                </div>
+        </div>
+   
+  
+
+</div>

@@ -4,6 +4,7 @@ import { CompanyCorePageComponent } from './modules/company/company-core-page/co
 import { CompanyHomepageComponent } from './modules/company/company-homepage/company-homepage.component';
 import { CompanyProfileComponent } from './modules/company/company-profile/company-profile.component';
 import { JobPostPageComponent } from './modules/company/job-post-page/job-post-page.component';
+import { JobDescripitionComponent } from './modules/seekers/job-descripition/job-descripition.component';
 import { SeekerCorePageComponent } from './modules/seekers/seeker-core-page/seeker-core-page.component';
 import { SeekerHomeComponent } from './modules/seekers/seeker-home/seeker-home.component';
 import { SeekerProfileViewComponent } from './modules/seekers/seeker-profile-view/seeker-profile-view.component';
@@ -57,7 +58,11 @@ const routes: Routes = [
         {
             path:'ViewProfile',
             component:SeekerProfileViewComponent
-        }
+        },{
+
+        
+        path:'jobDescripition',
+        component:JobDescripitionComponent}
         
     ]
     },

@@ -13,6 +13,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProfileServicesService } from '../../shared/services/profile/profile-services.service';
 import { JobServicesService } from '../../shared/services/jobs/job-services.service';
 import { SeekerProfileViewComponent } from './seeker-profile-view/seeker-profile-view.component';
+import { JobDescripitionComponent } from './job-descripition/job-descripition.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { SeekerProfileViewComponent } from './seeker-profile-view/seeker-profile
 
     SeekerProfileComponent,
     SeekerCorePageComponent,
-    SeekerProfileViewComponent
+    SeekerProfileViewComponent,
+    JobDescripitionComponent
   ],
   imports: [
     CommonModule,

@@ -8,6 +8,7 @@ export class ProfileServicesService {
 
   constructor(private _http: HttpClient) { }
   api!:string;
+  token=localStorage.getItem('Token')
 
 
   personalDetailsApi(form:any){
@@ -32,7 +33,7 @@ export class ProfileServicesService {
   }
 
   userProfile(){
-    this.api='https://job360webapi.azurewebsites.net/api/seeker'+localStorage.getItem('UserId');
+    this.api='https://job360webapi.azurewebsites.net/api/seeker/'+localStorage.getItem('UserId');
     return this._http.get(this.api)
   }
 

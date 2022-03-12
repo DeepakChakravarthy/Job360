@@ -5,6 +5,7 @@ import {HttpClient} from '@angular/common/http'
 })
 export class JobServicesService {
   api!:string;
+  jobId!:number;
   constructor(private _http:HttpClient) { }
 
   jobListGetApi(){
@@ -15,6 +16,12 @@ export class JobServicesService {
   createJobPostApi(form:any){
     this.api='https://job360webapi.azurewebsites.net/api/Job';
     return this._http.post(this.api,form)
+  }
+
+
+  jobDescripitionGetApi(){
+    this.api='https://job360webapi.azurewebsites.net/api/Job/'+this.jobId;
+    return this._http.get(this.api)
   }
 
   

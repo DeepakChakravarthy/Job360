@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import {ActivatedRoute, Router} from '@angular/router';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router:Router,private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+  }
+
+  profilebtn(){
+    this.router.navigate(['ViewProfile'],{relativeTo:this.route})
+
   }
 
 }
