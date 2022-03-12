@@ -1,66 +1,56 @@
-<h1>working</h1>
-<div class="container">
-    <div class="row">
-        <div class="col-md-4">
-            <div class="cards percentage-cards">
 
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="cards percentage-cards">
+<section class="layout"></section>
+  <div>
+    <kendo-grid [kendoGridBinding]="gridView" [pageSize]="20" [pageable]="true" [sortable]="true" [groupable]="true"
+      [reorderable]="true" [resizable]="true" [height]="450" [columnMenu]="{ filter: true }">
+      <ng-template kendoGridToolbarTemplate>
+        <input [style.width.px]="800" placeholder="Search in all columns..." kendoTextBox (input)="onFilter($event)" />
+        <kendo-grid-spacer></kendo-grid-spacer>
+        <button kendoGridExcelCommand type="button" icon="file-excel">
+          Export to Excel
+        </button>
 
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="cards percentage-cards">
+      </ng-template>
 
-            </div>
-        </div>
+      <kendo-grid-column field="id" title="Account ID" [width]="140"></kendo-grid-column>
+      <kendo-grid-column field="username" title="User Name" [width]="180"></kendo-grid-column>
+      <kendo-grid-column field="type" title="Account Type" [width]="180"></kendo-grid-column>
+      <kendo-grid-column field="email" title="Email" [width]="180"></kendo-grid-column>
+      <kendo-grid-column field="password" title="Password" [width]="180"></kendo-grid-column>
+
+      <kendo-grid-pdf fileName="User.pdf" [repeatHeaders]="true"></kendo-grid-pdf>
+      <kendo-grid-excel fileName="User.xlsx"></kendo-grid-excel>
+    </kendo-grid>
+  </div>
+  <div class="row">
+    <div class="col-md-5 .offset-md-3">
+      <kendo-chart>
+        <kendo-chart-title text="Units sold"></kendo-chart-title>
+        <kendo-chart-category-axis>
+          <kendo-chart-category-axis-item [categories]="['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul']"
+            [title]="{ text: 'Months' }">
+          </kendo-chart-category-axis-item>
+        </kendo-chart-category-axis>
+        <kendo-chart-series>
+          <kendo-chart-series-item type="line" [data]="[123, 276, 310, 212, 240, 156, 98]">
+          </kendo-chart-series-item>
+          <kendo-chart-series-item type="line" [data]="[165, 210, 287, 144, 190, 167, 212]">
+          </kendo-chart-series-item>
+          <kendo-chart-series-item type="line" [data]="[56, 140, 195, 46, 123, 78, 95]">
+          </kendo-chart-series-item>
+        </kendo-chart-series>
+      </kendo-chart>
     </div>
-    <div class="row mt-5">
-        <div class="col-md-6">
-            <kendo-chart>
-                <kendo-chart-title text="Units sold"></kendo-chart-title>
-                <kendo-chart-category-axis>
-                  <kendo-chart-category-axis-item
-                    [categories]="['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul']"
-                    [title]="{ text: 'Months' }"
-                  >
-                  </kendo-chart-category-axis-item>
-                </kendo-chart-category-axis>
-                <kendo-chart-series>
-                  <kendo-chart-series-item
-                    type="line"
-                    [data]="[123, 276, 310, 212, 240, 156, 98]"
-                  >
-                  </kendo-chart-series-item>
-                  <kendo-chart-series-item
-                    type="line"
-                    [data]="[165, 210, 287, 144, 190, 167, 212]"
-                  >
-                  </kendo-chart-series-item>
-                  <kendo-chart-series-item
-                    type="line"
-                    [data]="[56, 140, 195, 46, 123, 78, 95]"
-                  >
-                  </kendo-chart-series-item>
-                </kendo-chart-series>
-              </kendo-chart>
-        </div>
-        <div class="col-md-6">
-            <kendo-chart title="World Population by Broad Age Groups">
-                <kendo-chart-legend position="bottom"></kendo-chart-legend>
-                <kendo-chart-series>
-                  <kendo-chart-series-item
-                    type="pie"
-                    [data]="pieData"
-                    field="value"
-                    categoryField="category"
-                    [labels]="{ visible: true, content: labelContent }"
-                  >
-                  </kendo-chart-series-item>
-                </kendo-chart-series>
-              </kendo-chart>
-        </div>
+    <br>
+
+    <div class="col-md-5">
+      <kendo-chart title="World Population by Broad Age Groups">
+        <kendo-chart-legend position="bottom"></kendo-chart-legend>
+        <kendo-chart-series>
+          <kendo-chart-series-item type="pie" [data]="pieData" field="value" categoryField="category"
+            [labels]="{ visible: true, content: labelContent }">
+          </kendo-chart-series-item>
+        </kendo-chart-series>
+      </kendo-chart>
     </div>
-</div>
+  </div>
