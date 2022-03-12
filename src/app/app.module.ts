@@ -44,7 +44,8 @@ import { AdminserviceService } from './shared/services/adminservice.service';
         HloginModule,
         SeekersModule,
         LayoutModule,
-        GridModule
+        GridModule,
+        
     ],
     declarations: [AppComponent],
     providers: [AuthGuard,SigninsignupServicesService,AdminserviceService],

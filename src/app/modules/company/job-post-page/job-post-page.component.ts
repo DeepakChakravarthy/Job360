@@ -18,12 +18,12 @@ export class JobPostPageComponent implements OnInit {
     companyId:new FormControl('',[Validators.required]),
     title:new FormControl('',[Validators.required]),
     description:new FormControl('',[Validators.required]),
-    type:new FormControl(this.values.toLocaleDateString("nl",{day:"2-digit",month:"2-digit", year:"numeric"})),
+    type:new FormControl('',Validators.required),
     createdAt:new FormControl('',[Validators.required]),
     location:new FormControl('',[Validators.required]),
     salary:new FormControl('',[Validators.required]),
     noOfVacancy:new FormControl('',[Validators.required]),
-    isActive:new FormControl('',[Validators.required])
+    isActive:new FormControl('s',[Validators.required])
   })
 
   submit(){

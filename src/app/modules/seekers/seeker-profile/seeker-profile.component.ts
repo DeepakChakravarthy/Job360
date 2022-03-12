@@ -62,7 +62,7 @@ completionDate:new FormControl(''),
 percentage:new FormControl(''),
 instituteName:new FormControl(''),
 degereName:new FormControl(''),
-SeekerId:new FormControl(1)
+SeekerId:new FormControl(localStorage.getItem('serId'))
 })
 
 ExperienceDetails:FormGroup = new FormGroup({
@@ -85,20 +85,20 @@ personalDetailApiTrigger(){
 }
 
 EducationDetailsApiTrigger(){
-  console.log(this.EducationDetails.value)
-  this.sDate=this.EducationDetails.value["startingDate"];
-  this.eDate=this.EducationDetails.value["completionDate"];
+  // console.log(this.EducationDetails.value)
+  // this.sDate=this.EducationDetails.value["startingDate"];
+  // this.eDate=this.EducationDetails.value["completionDate"];
 
-    this.sDate=this.sDate.toLocaleDateString("nl",{day:"2-digit",month:"2-digit", year:"numeric"})
-    this.eDate=this.eDate.toLocaleDateString("nl",{day:"2-digit",month:"2-digit", year:"numeric"})
+  //   this.sDate=this.sDate.toLocaleDateString("nl",{day:"2-digit",month:"2-digit", year:"numeric"})
+  //   this.eDate=this.eDate.toLocaleDateString("nl",{day:"2-digit",month:"2-digit", year:"numeric"})
 
-    console.log('xsx',this.sDate);
-    console.log(this.eDate,'gbgfvd');
+  //   console.log('xsx',this.sDate);
+  //   console.log(this.eDate,'gbgfvd');
 
 
-     this.EducationDetails.patchValue({
+  //    this.EducationDetails.patchValue({
 
-   startingDate:this.sDate,completionDate:this.eDate})
+  //  startingDate:this.sDate,completionDate:this.eDate})
 
    //Completion Date format for EducationDetails
 
@@ -121,14 +121,18 @@ nextBtn(){
     this.EducationDetailsApiTrigger()
   }
   else if(this.currentStep===2){
-
+      
   }
   this.currentStep=this.currentStep+1;
 
 }
 
 ExperienceDetailsApiTrigger(){
-  
+  this.dataService.ExperienceDetailsApi(this.ExperienceDetails.value).subscribe(data=>{
+    console.log(data);
+  },error=>{
+    console.log(error)
+  })
 }
 
 pdf(){

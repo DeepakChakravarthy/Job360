@@ -12,6 +12,8 @@ import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProfileServicesService } from '../../shared/services/profile/profile-services.service';
 import { JobServicesService } from '../../shared/services/jobs/job-services.service';
+import { SeekerProfileViewComponent } from './seeker-profile-view/seeker-profile-view.component';
+import { JobDescripitionComponent } from './job-descripition/job-descripition.component';
 
 
 @NgModule({
@@ -20,7 +22,9 @@ import { JobServicesService } from '../../shared/services/jobs/job-services.serv
     NavbarComponent,
 
     SeekerProfileComponent,
-    SeekerCorePageComponent
+    SeekerCorePageComponent,
+    SeekerProfileViewComponent,
+    JobDescripitionComponent
   ],
   imports: [
     CommonModule,
