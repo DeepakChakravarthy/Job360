@@ -11,10 +11,16 @@ import { CompanyNavbarComponent } from './company-navbar/company-navbar.componen
 import { RouterModule } from '@angular/router';
 import { CompanyCorePageComponent } from './company-core-page/company-core-page.component';
 import "hammerjs";
-import { ChartModule } from '@progress/kendo-angular-charts';
+import { ChartModule, ChartsModule } from '@progress/kendo-angular-charts';
 import { CompanyProfileComponent } from './company-profile/company-profile.component';
 import { JobServicesService } from '../../shared/services/jobs/job-services.service';
+import {
+  GridModule,
+  PDFModule,
+  ExcelModule,
+} from "@progress/kendo-angular-grid";
 
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -33,7 +39,8 @@ import { JobServicesService } from '../../shared/services/jobs/job-services.serv
     InputsModule,
     LabelModule,
     DateInputsModule,
-    IntlModule
+    IntlModule,
+    NgbModule,ChartsModule,InputsModule,GridModule,PDFModule,ExcelModule
    
   ],
   providers: [JobServicesService],
