@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
+
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -16,5 +17,10 @@ export class NavbarComponent implements OnInit {
     this.router.navigate(['ViewProfile'],{relativeTo:this.route})
 
   }
+
+  SeekerHomebtn(){
+    this.router.navigate(['seeker'],{relativeTo:this.route})
+  }
+
 
 }
