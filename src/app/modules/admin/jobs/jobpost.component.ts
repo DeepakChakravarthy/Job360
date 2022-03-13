@@ -38,43 +38,45 @@ export class JobpostComponent implements OnInit {
   }
 
   public onFilter(inputValue: any): void {
+    const jobstatus = inputValue.target.value;
     const input = inputValue.target.value;
     this.gridView = process(this.gridData, {
       filter: {
         logic: 'or',
         filters: [
           {
-            field: 'userId',
+            field: 'companyId',
             operator: 'contains',
             value: input,
           },
           {
-            field: 'id',
+            field: 'createdAt',
             operator: 'contains',
             value: input,
           },
           {
-            field: 'companyName',
+            field: 'title',
             operator: 'contains',
             value: input,
           },
           {
-            field: 'address',
+            field: 'type',
             operator: 'contains',
             value: input,
           },
           {
-            field: 'contactNo',
+            field: 'location',
+            operator: 'contains',
+            value: input,
+          },
+
+          {
+            field: 'noOfVacancy',
             operator: 'contains',
             value: input,
           },
           {
-            field: 'jobPosted',
-            operator: 'contains',
-            value: input,
-          },
-          {
-            field: 'userAddress',
+            field: 'salary',
             operator: 'contains',
             value: input,
           },

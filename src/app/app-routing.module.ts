@@ -14,15 +14,15 @@ import { AuthGuard } from './shared';
 
 const routes: Routes = [
     {
-        path:'hlogin',
+        path:'login',
         loadChildren: () => import('./modules/hlogin/hlogin.module').then((m)=> m.HloginModule)
     },
     {
-        path: 'adminlayout',
+        path: 'admin',
         loadChildren: () => import('./modules/admin/layout.module').then((m) => m.LayoutModule),
         canActivate: [AuthGuard]
     },
-    { path: 'login', loadChildren: () => import('./login/login.module').then((m) => m.LoginModule) },
+    { path: 'admin/login', loadChildren: () => import('./login/login.module').then((m) => m.LoginModule) },
     { path: 'signup', loadChildren: () => import('./signup/signup.module').then((m) => m.SignupModule) },
     {
         path: '',

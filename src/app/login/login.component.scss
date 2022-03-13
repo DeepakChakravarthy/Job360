@@ -1,4 +1,4 @@
-$topnav-background-color: #222;
+$topnav-background-color: rgb(255, 255, 255);
 :host {
     display: block;
 }
@@ -12,7 +12,7 @@ $topnav-background-color: #222;
     overflow: auto;
     background: $topnav-background-color;
     text-align: center;
-    color: #fff;
+    color: rgb(8, 8, 8);
     padding: 3em;
 
     .col-lg-4 {
@@ -31,21 +31,21 @@ $topnav-background-color: #222;
         background: 0 0;
         border: none;
         box-shadow: none;
-        border-bottom: 2px solid rgba(255, 255, 255, 0.5);
-        color: #fff;
+        border-bottom: 2px solid rgba(89, 50, 180, 0.5);
+        color: rgb(0, 0, 0);
         border-radius: 0;
     }
 
     .input-underline:focus {
-        border-bottom: 2px solid #fff;
+        border-bottom: 2px solid rgb(0, 0, 0);
         box-shadow: none;
     }
 
     .rounded-btn {
         -webkit-border-radius: 50px;
         border-radius: 50px;
-        color: rgba(255, 255, 255, 0.8);
-        background: $topnav-background-color;
+        color: rgba(226, 213, 213, 0.8);
+        background: #5161ce;
         border: 2px solid rgba(255, 255, 255, 0.8);
         font-size: 18px;
         line-height: 40px;
@@ -76,21 +76,21 @@ $topnav-background-color: #222;
         padding: 8px 0;
 
         input::-webkit-input-placeholder {
-            color: rgba(255, 255, 255, 0.6) !important;
+            color: rgba(29, 28, 28, 0.6) !important;
         }
 
         input:-moz-placeholder {
             /* Firefox 18- */
-            color: rgba(255, 255, 255, 0.6) !important;
+            color: rgba(0, 0, 0, 0.6) !important;
         }
 
         input::-moz-placeholder {
             /* Firefox 19+ */
-            color: rgba(255, 255, 255, 0.6) !important;
+            color: rgba(15, 15, 15, 0.6) !important;
         }
 
         input:-ms-input-placeholder {
-            color: rgba(255, 255, 255, 0.6) !important;
+            color: rgba(10, 10, 10, 0.6) !important;
         }
     }
 

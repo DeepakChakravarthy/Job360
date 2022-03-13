@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import{ProfileServicesService} from '../../../shared/services/profile/profile-services.service'
 
 
@@ -8,8 +8,7 @@ import{ProfileServicesService} from '../../../shared/services/profile/profile-se
   styleUrls: ['./seeker-profile-view.component.scss']
 })
 export class SeekerProfileViewComponent implements OnInit {
-
-  constructor(private dataService:ProfileServicesService) { }
+    constructor(private dataService:ProfileServicesService) { }
 
   ngOnInit(): void {
     this.data()
