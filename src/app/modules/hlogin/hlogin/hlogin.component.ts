@@ -3,6 +3,8 @@ import { ThemeService } from 'ng2-charts';
 import { SigninsignupServicesService } from '../../../shared/services/signinsignup-services.service';
 import {FormGroup,FormControl} from '@angular/forms'
 import { ActivatedRoute, Router} from '@angular/router'
+import { TextBoxComponent } from "@progress/kendo-angular-inputs";
+
 
 @Component({
   selector: 'app-hlogin',
@@ -15,7 +17,7 @@ export class HloginComponent implements OnInit {
   xyz="sign-up-mode";
   mmm=false;
   userTypeValue:string='';
-  Type:Array<string>=['company','seeker','admin'];
+  Type:Array<string>=['company','seeker'];
   // notyf = new Notyf({
   //   duration: 1000,
   //   position: {
@@ -107,5 +109,8 @@ export class HloginComponent implements OnInit {
       }
     )
   }
+  
+  
+
 
 }

@@ -7,11 +7,13 @@
             <kendo-floatinglabel text="First Name">
         <kendo-textbox formControlName='firstName'></kendo-textbox>
         </kendo-floatinglabel>
+        <kendo-formhint>Eg: Jhon</kendo-formhint>
         </kendo-formfield>
         <kendo-formfield>
             <kendo-floatinglabel text="Last Name">
             <kendo-textbox formControlName='lastName'></kendo-textbox>
             </kendo-floatinglabel>
+            <kendo-formhint>Eg: Bruce</kendo-formhint>
         </kendo-formfield>
         
         <kendo-formfield>
@@ -20,19 +22,21 @@
         
             </kendo-numerictextbox>
             </kendo-floatinglabel>
+            <kendo-formhint>Eg: 9629794425</kendo-formhint>
         </kendo-formfield>
         <button type="submit" class="btn btn-info" (click)="nextBtn()">next</button>
         </form>
         
 <form [formGroup]="EducationDetails" *ngIf="currentStep===1" class="ml-5 mr-5">
     <kendo-formfield>
-         <kendo-label text="starting Date"></kendo-label>
-         <kendo-datepicker formControlName="startingDate" format="dd-MM-yyyy" ></kendo-datepicker>
+         <kendo-floatinglabel text="starting Date">
+            <input onfocus="(this.type='date')" onblur="(this.type='text')" class="k-datepicker k-input ng-untouched ng-pristine ng-valid k-input-md k-rounded-md k-input-solid" formControlName="startingDate">
+</kendo-floatinglabel>
      </kendo-formfield>
       <kendo-formfield>
-         <kendo-label text="Completion Date"></kendo-label>
-         <kendo-datepicker  formControlName="completionDate" format='dd-MM-yyyy' ></kendo-datepicker> 
-      
+         <kendo-floatinglabel text="Completion Date">
+         <input onfocus="(this.type='date')" onblur="(this.type='text')" class="k-datepicker k-input ng-untouched ng-pristine ng-valid k-input-md k-rounded-md k-input-solid" formControlName="completionDate">
+</kendo-floatinglabel>
      </kendo-formfield>  
         <kendo-formfield>
          <kendo-floatinglabel text="percentage">
