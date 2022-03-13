@@ -6,13 +6,14 @@
             <h2 class="title">Login</h2>
             <kendo-formfield>
               <kendo-floatinglabel text="Email">
-                <kendo-textbox formControlName="email"></kendo-textbox>
-              </kendo-floatinglabel>
+                <kendo-textbox class="border border-primary" formControlName="email"></kendo-textbox>
+              </kendo-floatinglabel><kendo-formhint>Eg: example@gmail.com</kendo-formhint>
             </kendo-formfield>
             <kendo-formfield>
               <kendo-floatinglabel text="Password">
-                <kendo-textbox formControlName="password"></kendo-textbox>
+                <input kendoTextBox class="border border-primary" type="password"  formControlName="password"/>
               </kendo-floatinglabel>
+              <kendo-formhint>Enter your password</kendo-formhint>
             </kendo-formfield>
             <input type="submit"  value="Sign in" class="btn solid">
   
@@ -22,20 +23,25 @@
           <form [formGroup]="SignUpForm" (ngSubmit)="signup()" class="sign-up-form">
             <h2 class="title">Register</h2>
             <kendo-formfield>
-              <kendo-label text="User Name"></kendo-label>
-              <kendo-textbox formControlName="username"></kendo-textbox>
+              <kendo-floatinglabel text="User Name">
+              <kendo-textbox class="border border-primary" [style.width.px]="250" formControlName="username"></kendo-textbox></kendo-floatinglabel>
+              <kendo-formhint>Eg: Jhon1472</kendo-formhint>
             </kendo-formfield>
             <kendo-formfield>
-              <kendo-label text="Email:"></kendo-label>
-              <kendo-textbox formControlName="email"></kendo-textbox>
+              <kendo-floatinglabel text="Email:">
+              <kendo-textbox class="border border-primary" [style.width.px]="250" formControlName="email"></kendo-textbox></kendo-floatinglabel>
+              <kendo-formhint>Eg: example@gmail.com</kendo-formhint>
             </kendo-formfield>
             <kendo-formfield>
-              <kendo-label text="Password:"></kendo-label>
-              <kendo-textbox formControlName="password"></kendo-textbox>
+              <kendo-floatinglabel text="Password:">
+            
+                  <input class="border border-primary" [style.width.px]="250" kendoTextBox type="password"  formControlName="password" /></kendo-floatinglabel>
+                  <kendo-formhint>Enter your password</kendo-formhint>
             </kendo-formfield>
             <kendo-formfield>
-              <kendo-label text="User Type:"></kendo-label>
-              <kendo-dropdownlist [style.width.px]="190" value="company" [data]="Type" formControlName="type"></kendo-dropdownlist>
+              <kendo-floatinglabel text="User Type:">
+              <kendo-dropdownlist class="border border-primary" [style.width.px]="250" value="company" [data]="Type" formControlName="type"></kendo-dropdownlist></kendo-floatinglabel>
+              <kendo-formhint>Select your Role</kendo-formhint>
             </kendo-formfield>
             <label class="check">
               <input type="checkbox" checked="checked">

@@ -25,5 +25,16 @@ export class JobServicesService {
   }
 
   
-  
+  companyIdGetApi(){
+    this.api = 'https://job360webapi.azurewebsites.net/api/Company/retrievecompanydata/'+localStorage.getItem('UserId')
+    return this._http.get(this.api)
+  }
+
+
+  jobAppliedPostApi(){
+    this.api='https://job360webapi.azurewebsites.net/api/JobsApplied';
+    return this._http.post(this.api,{
+      
+    })
+  }
 }

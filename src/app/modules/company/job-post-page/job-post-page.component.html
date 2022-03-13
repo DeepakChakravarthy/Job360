@@ -86,33 +86,37 @@
 <div class="col-md-8">
   <div class="cards">
     <form [formGroup]="jobPostForm" (ngSubmit)="submit()">
-      <kendo-formfield>
-        <kendo-floatinglabel text="Company Id" >
-          <kendo-numerictextbox [style.width.px]="400" formControlName="companyId" ></kendo-numerictextbox>
-        </kendo-floatinglabel>
-      </kendo-formfield>
       
       <kendo-formfield>
         <kendo-floatinglabel text="Title" >
           <kendo-textbox [style.width.px]="400" formControlName="title" ></kendo-textbox>
         </kendo-floatinglabel>
+        <kendo-formhint>Eg: UI Developer</kendo-formhint>
       </kendo-formfield>
       
       <kendo-formfield>
         <kendo-floatinglabel text="Description" >
-          <kendo-textbox [style.width.px]="400" formControlName="description" ></kendo-textbox>
+          <kendo-textarea [style.width.px]="400" formControlName="description" ></kendo-textarea>
         </kendo-floatinglabel>
+        <kendo-formhint>
+            Not more than 150 words.
+        </kendo-formhint>
       </kendo-formfield>
       
       <kendo-formfield>
         <kendo-floatinglabel text="Type" >
           <kendo-textbox [style.width.px]="400" formControlName="type" ></kendo-textbox>
         </kendo-floatinglabel>
+        <kendo-formhint>
+          Eg:Full Time
+        </kendo-formhint>
       </kendo-formfield>
       
        <kendo-formfield>
-       
-          <input onfocus="(this.type='date')" onblur="(this.type='text')"  [style.width.px]="400" formControlName="createdAt" />
+       <kendo-floatinglabel text="Created At">
+        <input onfocus="(this.type='date')" onblur="(this.type='text')"  [style.width.px]="400" formControlName="createdAt" />
+
+       </kendo-floatinglabel>
       
       </kendo-formfield> 
         
@@ -120,18 +124,23 @@
         <kendo-floatinglabel text="Location" >
           <kendo-textbox [style.width.px]="400" formControlName="location" ></kendo-textbox>
         </kendo-floatinglabel>
+        <kendo-formhint>
+          Eg: Coimbatore
+        </kendo-formhint>
       </kendo-formfield>
       
       <kendo-formfield>
         <kendo-floatinglabel text="Salary" >
           <kendo-numerictextbox [style.width.px]="400" formControlName="salary" ></kendo-numerictextbox>
         </kendo-floatinglabel>
+        <kendo-formhint>18000</kendo-formhint>
       </kendo-formfield>
       
       <kendo-formfield>
         <kendo-floatinglabel text="No Of Vacancy" >
           <kendo-numerictextbox [style.width.px]="400" formControlName="noOfVacancy" ></kendo-numerictextbox>
         </kendo-floatinglabel>
+        <kendo-formhint>12</kendo-formhint>
       </kendo-formfield>
       
       <kendo-formfield>
