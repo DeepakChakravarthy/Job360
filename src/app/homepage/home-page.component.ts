@@ -18,6 +18,6 @@ export class HomePageComponent implements OnInit {
     
     loginNavigation()
 {
-    this.router.navigate(['hlogin'])
+    this.router.navigate(['login'])
 }    
 }

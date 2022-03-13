@@ -14,12 +14,12 @@ export class NavbarComponent implements OnInit {
   }
 
   profilebtn(){
-    this.router.navigate(['ViewProfile'],{relativeTo:this.route})
+    this.router.navigate(['Profile'],{relativeTo:this.route})
 
   }
 
   SeekerHomebtn(){
-    this.router.navigate(['seeker'],{relativeTo:this.route})
+    this.router.navigate(['/seeker'],{relativeTo:this.route})
   }
 
 

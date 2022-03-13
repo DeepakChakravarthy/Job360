@@ -52,16 +52,16 @@ const routes: Routes = [
             path:'',
             component:SeekerHomeComponent
         },{
-            path:'profile',
+            path:'Details',
             component:SeekerProfileComponent
         },
         {
-            path:'ViewProfile',
+            path:'Profile',
             component:SeekerProfileViewComponent
         },{
 
         
-        path:'jobDescripition',
+        path:'JobDescripition',
         component:JobDescripitionComponent}
         
     ]
