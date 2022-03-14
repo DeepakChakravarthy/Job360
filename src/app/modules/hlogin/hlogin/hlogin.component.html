@@ -1,88 +1,96 @@
+<div class="container-fluid" [ngClass]="{'sign-up-mode':mmm}">
+  <div class="forms-container">
+    <div class="signin-signup">
+      <form [formGroup]="SignInForm" (ngSubmit)="loginForm()" class="sign-in-form">
+        <h2 class="title">Login</h2>
+        <kendo-formfield>
+          <kendo-floatinglabel text="Email">
+            <kendo-textbox class="border border-primary" formControlName="email"></kendo-textbox>
+          </kendo-floatinglabel>
+          <kendo-formhint>Eg: example@gmail.com</kendo-formhint>
+          <kendo-formerror>Please Enter the Email-ID</kendo-formerror>
+        </kendo-formfield>
+        <kendo-formfield>
+          <kendo-floatinglabel text="Password">
+            <input kendoTextBox class="border border-primary" type="password" formControlName="password" />
+          </kendo-floatinglabel>
+          <kendo-formhint>Enter your password</kendo-formhint>
+          <kendo-formerror>Please Enter the Password</kendo-formerror>
+        </kendo-formfield>
+        <input type="submit" value="Sign in" class="btn solid">
+        <div *ngIf="LoaderValue">
+          <div class="example-item" *ngFor="let loader of loaders">
+            <div class="example-item-title">logging...</div>
 
-    <div class="container-fluid" [ngClass]="{'sign-up-mode':mmm}" >
-      <div class="forms-container">
-        <div class="signin-signup">
-          <form [formGroup]="SignInForm" (ngSubmit)="loginForm()" class="sign-in-form">
-            <h2 class="title">Login</h2>
-            <kendo-formfield>
-              <kendo-floatinglabel text="Email">
-                <kendo-textbox class="border border-primary" formControlName="email"></kendo-textbox>
-              </kendo-floatinglabel><kendo-formhint>Eg: example@gmail.com</kendo-formhint>
-            </kendo-formfield>
-            <kendo-formfield>
-              <kendo-floatinglabel text="Password">
-                <input kendoTextBox class="border border-primary" type="password"  formControlName="password"/>
-              </kendo-floatinglabel>
-              <kendo-formhint>Enter your password</kendo-formhint>
-            </kendo-formfield>
-            <input type="submit"  value="Sign in" class="btn solid">
-            <div *ngIf="LoaderValue">
-              <div class="example-item" *ngFor="let loader of loaders">
-                <div class="example-item-title">logging...</div>
-                
-                  <kendo-loader
-                    [type]="loader.type"
-                    [themeColor]="loader.themeColor"
-                    [size]="loader.size"
-                  >
-                  </kendo-loader>
-                </div>
-            </div>
-            
-            
-          
-           
-          </form>
-          <form [formGroup]="SignUpForm" (ngSubmit)="signup()" class="sign-up-form">
-            <h2 class="title">Register</h2>
-            <kendo-formfield>
-              <kendo-floatinglabel text="User Name">
-              <kendo-textbox class="border border-primary" [style.width.px]="250" formControlName="username"></kendo-textbox></kendo-floatinglabel>
-              <kendo-formhint>Eg: Jhon1472</kendo-formhint>
-            </kendo-formfield>
-            <kendo-formfield>
-              <kendo-floatinglabel text="Email:">
-              <kendo-textbox class="border border-primary" [style.width.px]="250" formControlName="email"></kendo-textbox></kendo-floatinglabel>
-              <kendo-formhint>Eg: example@gmail.com</kendo-formhint>
-            </kendo-formfield>
-            <kendo-formfield>
-              <kendo-floatinglabel text="Password:">
-            
-                  <input class="border border-primary" [style.width.px]="250" kendoTextBox type="password"  formControlName="password" /></kendo-floatinglabel>
-                  <kendo-formhint>Enter your password</kendo-formhint>
-            </kendo-formfield>
-            <kendo-formfield>
-              <kendo-floatinglabel text="User Type:">
-              <kendo-dropdownlist class="border border-primary" [style.width.px]="250" value="company" [data]="Type" formControlName="type"></kendo-dropdownlist></kendo-floatinglabel>
-              <kendo-formhint>Select your Role</kendo-formhint>
-            </kendo-formfield>
-            <label class="check">
-              <input type="checkbox" checked="checked">
-              <span class="checkmark">I accept the <a href="#">terms and services</a></span>
-            </label>
-            <input type="submit"  value="Create account" class="btn solid p-0 m-0">
-  
-          </form>
-        </div>
-      </div>
-      <div class="panels-container">
-        <div class="panel left-panel">
-          <div class="content">
-            <h3>You don't have an account?</h3>
-            <p>Create your account right now connecting job opportunities and people.</p>
-            <button class="btn transparent" (click)="check1()" id="sign-up-btn">Register</button>
+            <kendo-loader [type]="loader.type" [themeColor]="loader.themeColor" [size]="loader.size">
+            </kendo-loader>
           </div>
-          
         </div>
-  
-        <div class="panel right-panel">
-          <div class="content">
-            <h3>Already have an account?</h3>
-            <p>Login to see your notifications or Apply to the Job -Sign-in</p>
-            <button class="btn transparent " (click)="check1()" id="sign-in-btn">Sign in</button>
-          </div>
-         
-        </div>
-      </div>
+
+
+
+
+      </form>
+      <form [formGroup]="SignUpForm" (ngSubmit)="signup()" class="sign-up-form">
+        <h2 class="title">Register</h2>
+        <kendo-formfield>
+          <kendo-floatinglabel text="User Name">
+            <kendo-textbox class="border border-primary" [style.width.px]="250" formControlName="username">
+            </kendo-textbox>
+          </kendo-floatinglabel>
+          <kendo-formhint>Eg: Jhon1472</kendo-formhint>
+          <kendo-formerror>Please Enter the Username</kendo-formerror>
+        </kendo-formfield>
+        <kendo-formfield>
+          <kendo-floatinglabel text="Email:">
+            <kendo-textbox class="border border-primary" [style.width.px]="250" formControlName="email"></kendo-textbox>
+          </kendo-floatinglabel>
+          <kendo-formhint>Eg: example@gmail.com</kendo-formhint>
+          <kendo-formerror>Please Enter the Email-ID</kendo-formerror>
+        </kendo-formfield>
+        <kendo-formfield>
+          <kendo-floatinglabel text="Password:">
+
+            <input class="border border-primary" [style.width.px]="250" kendoTextBox type="password"
+              formControlName="password" />
+          </kendo-floatinglabel>
+          <kendo-formhint>Enter your password</kendo-formhint>
+          <kendo-formerror>Please Enter the Password</kendo-formerror>
+        </kendo-formfield>
+        <kendo-formfield>
+          <kendo-floatinglabel text="User Type:">
+            <kendo-dropdownlist class="border border-primary" [style.width.px]="250" value="company" [data]="Type"
+              formControlName="type"></kendo-dropdownlist>
+          </kendo-floatinglabel>
+          <kendo-formhint>Select your Role</kendo-formhint>
+          <kendo-formerror>Please Select the Role</kendo-formerror>
+        </kendo-formfield>
+        <label class="check">
+          <input type="checkbox" checked="checked">
+          <span class="checkmark">I accept the <a href="#">terms and services</a></span>
+        </label>
+        <input type="submit" value="Create account" class="btn solid p-0 m-0">
+
+      </form>
     </div>
-  
+  </div>
+  <div class="panels-container">
+    <div class="panel left-panel">
+      <div class="content">
+        <h3>You don't have an account?</h3>
+        <p>Create your account right now connecting job opportunities and people.</p>
+        <button class="btn transparent" (click)="check1()" id="sign-up-btn">Register</button>
+      </div>
+
+    </div>
+
+    <div class="panel right-panel">
+      <div class="content">
+        <h3>Already have an account?</h3>
+        <p>Login to see your notifications or Apply to the Job -Sign-in</p>
+        <button class="btn transparent " (click)="check1()" id="sign-in-btn">Sign in</button>
+      </div>
+
+    </div>
+  </div>
+</div>
