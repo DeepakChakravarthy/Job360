@@ -31,10 +31,14 @@ export class JobServicesService {
   }
 
 
-  jobAppliedPostApi(){
+  jobAppliedPostApi(form){
     this.api='https://job360webapi.azurewebsites.net/api/JobsApplied';
-    return this._http.post(this.api,{
-      
-    })
+    return this._http.post(this.api,form)
   }
+
+  userReterive(){
+    this.api='https://job360webapi.azurewebsites.net/api/Seeker/retrieveseekerdata'+localStorage.getItem('UserId')
+    return this._http.get(this.api)
+  }
+  
 }
