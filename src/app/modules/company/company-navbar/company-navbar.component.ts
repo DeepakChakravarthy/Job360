@@ -17,4 +17,8 @@ export class CompanyNavbarComponent implements OnInit {
   jobPost(){
     this.router.navigate(['jobPost'], {relativeTo:this.route});
   }
+  Logout(){
+    localStorage.clear();
+    this.router.navigate(['login'])
+  }
 }

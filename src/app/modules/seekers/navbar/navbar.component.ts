@@ -21,6 +21,10 @@ export class NavbarComponent implements OnInit {
   SeekerHomebtn(){
     this.router.navigate(['/seeker'],{relativeTo:this.route})
   }
+  Logout(){
+    localStorage.clear();
+    this.router.navigate(['login'])
+  }
 
 
 }
