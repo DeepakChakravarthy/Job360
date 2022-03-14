@@ -23,16 +23,6 @@
         </button>
         <!-- <button kendoGridPDFCommand icon="file-pdf">Export to PDF</button> -->
       </ng-template>
-      <!-- <kendo-grid-checkbox-column
-        [width]="45"
-        [headerClass]="{ 'text-center': true }"
-        [class]="{ 'text-center': true }"
-        [resizable]="false"
-        [columnMenu]="false"
-        [showSelectAll]="true"
-      ></kendo-grid-checkbox-column> -->
-  
-      <!-- <kendo-grid-column-group title="User Details" [columnMenu]="false"> -->
         <kendo-grid-column
           field="companyId"
           title="Company ID"
@@ -41,8 +31,11 @@
         <kendo-grid-column
           field="createdAt"
           title="Posted at"
-          [width]="180"
-        ></kendo-grid-column>
+          [width]="180">
+          <ng-template kendoGridCellTemplate let-dataItem>
+            {{dataItem.createdAt | date:'MM/dd/yyyy'}}
+          </ng-template>
+        </kendo-grid-column>
         <kendo-grid-column
           field="title"
           title="Job Title"
@@ -59,11 +52,6 @@
           [width]="180"
         ></kendo-grid-column>
         <kendo-grid-column
-          field="isActive"
-          title="Job Status"
-          [width]="180"
-        ></kendo-grid-column>
-        <kendo-grid-column
           field="noOfVacancy"
           title="No.of Vacancy"
           [width]="120"
@@ -73,22 +61,8 @@
           title="Salary"
           [width]="120"
         ></kendo-grid-column>
-      <!-- </kendo-grid-column-group> -->
-      <!-- <kendo-grid-column-group title="Other Details" [columnMenu]="false">
-        <kendo-grid-column
-          field="optionalMobile"
-          title="Optional Mobile"
-          [width]="180"
-        ></kendo-grid-column>
-        <kendo-grid-column
-          field="userAddress"
-          title="Address"
-          [width]="180"
-        ></kendo-grid-column>
-      </kendo-grid-column-group> -->
-      <!-- <kendo-grid-column-group title="Actions" [columnMenu]="false"> -->
-      <!-- </kendo-grid-column-group>   -->
-      <kendo-grid-pdf fileName="User.pdf" [repeatHeaders]="true"></kendo-grid-pdf>
+
+      <!-- <kendo-grid-pdf fileName="User.pdf" [repeatHeaders]="true"></kendo-grid-pdf> -->
       <kendo-grid-excel fileName="User.xlsx"></kendo-grid-excel>
     </kendo-grid>
   </div>

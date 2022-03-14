@@ -37,5 +37,8 @@ export class ProfileServicesService {
     return this._http.get(this.api)
   }
 
- 
+  userReterive(){
+    this.api='https://job360webapi.azurewebsites.net/api/Seeker/retrieveseekerdata/'+localStorage.getItem('UserId')
+    return this._http.get(this.api)
+  }
 }

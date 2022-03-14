@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormGroup, Validators, FormControl} from '@angular/forms';
 import { ProfileServicesService } from '../../../shared/services/profile/profile-services.service';
-
+import { ActivatedRoute, Router} from '@angular/router'
 @Component({
   selector: 'app-seeker-profile',
   templateUrl: './seeker-profile.component.html',
@@ -9,7 +9,7 @@ import { ProfileServicesService } from '../../../shared/services/profile/profile
 })
 export class SeekerProfileComponent implements OnInit {
 
-  constructor(private dataService:ProfileServicesService) { }
+  constructor(private dataService:ProfileServicesService ,private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -32,17 +32,17 @@ export class SeekerProfileComponent implements OnInit {
 
 steps = [
   {
-      label: 'Account Details',
+      label: 'Personal Details',
       //isValid: 1,
      
   },
   {
-      label: 'Personal Details',
+      label: 'Educational Details',
       //isValid: this.isStepValid,
       
   },
   {
-      label: 'Payment Details',
+      label: 'Experience Details',
       //isValid: this.isStepValid,
   }
       
@@ -80,7 +80,7 @@ personalDetailApiTrigger(){
   
   this.dataService.personalDetailsApi(this.PersonalDetails.value)
     .subscribe(data=>{
-      alert(data)
+
   })
 }
 
@@ -121,7 +121,8 @@ nextBtn(){
     this.EducationDetailsApiTrigger()
   }
   else if(this.currentStep===2){
-      
+      this.ExperienceDetailsApiTrigger()
+      this.router.navigate(['seeker/Profile'])
   }
   this.currentStep=this.currentStep+1;
 

@@ -10,19 +10,21 @@ import { SeekerHomeComponent } from './modules/seekers/seeker-home/seeker-home.c
 import { SeekerProfileViewComponent } from './modules/seekers/seeker-profile-view/seeker-profile-view.component';
 import { SeekerProfileComponent } from './modules/seekers/seeker-profile/seeker-profile.component';
 import { AuthGuard } from './shared';
+import { CompanyGuard } from './shared/guard/company.guard';
+import { SeekerGuard } from './shared/guard/seeker.guard';
 
 
 const routes: Routes = [
     {
-        path:'hlogin',
+        path:'login',
         loadChildren: () => import('./modules/hlogin/hlogin.module').then((m)=> m.HloginModule)
     },
     {
-        path: 'adminlayout',
+        path: 'admin',
         loadChildren: () => import('./modules/admin/layout.module').then((m) => m.LayoutModule),
         canActivate: [AuthGuard]
     },
-    { path: 'login', loadChildren: () => import('./login/login.module').then((m) => m.LoginModule) },
+    { path: 'admin/login', loadChildren: () => import('./login/login.module').then((m) => m.LoginModule) },
     { path: 'signup', loadChildren: () => import('./signup/signup.module').then((m) => m.SignupModule) },
     {
         path: '',
@@ -44,7 +46,7 @@ const routes: Routes = [
         {
             path:'jobPost',
             component:JobPostPageComponent
-        }]
+        }],canActivate: [CompanyGuard]
     },{
         path:'seeker',
         component:SeekerCorePageComponent,
@@ -52,19 +54,19 @@ const routes: Routes = [
             path:'',
             component:SeekerHomeComponent
         },{
-            path:'profile',
+            path:'Details',
             component:SeekerProfileComponent
         },
         {
-            path:'ViewProfile',
+            path:'Profile',
             component:SeekerProfileViewComponent
         },{
 
         
-        path:'jobDescripition',
+        path:'JobDescripition',
         component:JobDescripitionComponent}
         
-    ]
+    ],canActivate: [SeekerGuard]
     },
 
     { path: 'not-found', loadChildren: () => import('./not-found/not-found.module').then((m) => m.NotFoundModule) },

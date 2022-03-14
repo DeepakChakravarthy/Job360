@@ -26,6 +26,6 @@ export class SeekerHomeComponent implements OnInit {
 
   jobdesc(id){
     this.dataService.jobId=id;
-    this.router.navigate(['jobDescripition'],{relativeTo:this.route})
+    this.router.navigate(['JobDescripition'],{relativeTo:this.route})
   }
 }

@@ -1,5 +1,5 @@
  <nav class="navbar navbar-expand-custom navbar-mainbg">
-    <a class="navbar-brand navbar-logo" href="#">Navbar</a>
+    <a class="navbar-brand navbar-logo" href="#">Job360</a>
     <button class="navbar-toggler" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <i class="fas fa-bars text-white"></i>
     </button>
@@ -11,6 +11,9 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link" (click)="profilebtn()" ><i class="fa fa-user-circle-o" aria-hidden="true"></i>Profile</a>
+            </li>
+            <li class="nav-item" (click)="Logout()">
+                <a class="nav-link"  routerLinkActive="active"><i class="fa fa-suitcase" aria-hidden="true"></i>Logout</a>
             </li>
           
         </ul>
