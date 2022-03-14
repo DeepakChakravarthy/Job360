@@ -16,8 +16,21 @@
               <kendo-formhint>Enter your password</kendo-formhint>
             </kendo-formfield>
             <input type="submit"  value="Sign in" class="btn solid">
-  
-        
+            <div *ngIf="LoaderValue">
+              <div class="example-item" *ngFor="let loader of loaders">
+                <div class="example-item-title">logging...</div>
+                
+                  <kendo-loader
+                    [type]="loader.type"
+                    [themeColor]="loader.themeColor"
+                    [size]="loader.size"
+                  >
+                  </kendo-loader>
+                </div>
+            </div>
+            
+            
+          
            
           </form>
           <form [formGroup]="SignUpForm" (ngSubmit)="signup()" class="sign-up-form">

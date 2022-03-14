@@ -22,6 +22,8 @@ import { GridModule } from '@progress/kendo-angular-grid';
 import { AdminserviceService } from './shared/services/adminservice.service';
 import { SeekerGuard } from './shared/guard/seeker.guard';
 import { CompanyGuard } from './shared/guard/company.guard';
+import { IndicatorsModule } from '@progress/kendo-angular-indicators';
+
 
 
 
@@ -47,6 +49,7 @@ import { CompanyGuard } from './shared/guard/company.guard';
         SeekersModule,
         LayoutModule,
         GridModule,
+        IndicatorsModule,
         
     ],
     declarations: [AppComponent],
