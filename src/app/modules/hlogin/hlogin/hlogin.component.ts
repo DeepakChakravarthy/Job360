@@ -57,6 +57,7 @@ export class HloginComponent implements OnInit {
 
       if(this.userTypeValue=='company')
       {
+        this.LoaderValue=false
         localStorage.setItem('Companylogedin', 'true');
         this.router.navigate(['company'])
       }
@@ -71,8 +72,12 @@ export class HloginComponent implements OnInit {
 
         console.log("Logged IN as Seeker")
       }
+      else{
+        this.LoaderValue=false
+      }
     },
     error=>{
+      this.LoaderValue=false
         // this.notyf.error('Check your Email/Password')
     });
 
