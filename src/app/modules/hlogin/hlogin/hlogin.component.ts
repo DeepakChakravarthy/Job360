@@ -60,6 +60,7 @@ export class HloginComponent implements OnInit {
 
       if(this.userTypeValue=='company')
       {
+        this.LoaderValue=false
         this.toastr.success('Welcome to Job360', 'Login Success');
         localStorage.setItem('Companylogedin', 'true');
         this.router.navigate(['company'])
@@ -76,8 +77,13 @@ export class HloginComponent implements OnInit {
 
         console.log("Logged IN as Seeker")
       }
+      else{
+        this.LoaderValue=false
+      }
     },
     error=>{
+      this.LoaderValue=false
+        // this.notyf.error('Check your Email/Password')
       this.toastr.error(error.error.message, 'Invalid Credientials');
       console.log(error.error.message)
       this.FailedSignup  = error.error.message

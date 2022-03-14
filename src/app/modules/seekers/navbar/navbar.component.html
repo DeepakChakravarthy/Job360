@@ -7,13 +7,16 @@
         <ul class="navbar-nav ml-auto">
             <div class="hori-selector"><div class="left"></div><div class="right"></div></div>
             <li class="nav-item active">
-                <a class="nav-link" (click)="SeekerHomebtn()"><i class="fa fa-suitcase" aria-hidden="true"></i>Home</a>
+                <a class="nav-link" routerLinkActive="active" (click)="SeekerHomebtn()"><i class="fa fa-suitcase" aria-hidden="true"></i>Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" (click)="profilebtn()" ><i class="fa fa-user-circle-o" aria-hidden="true"></i>Profile</a>
+                <a class="nav-link" routerLinkActive="active" (click)="profilebtn()" ><i class="fa fa-user-circle-o" aria-hidden="true"></i>Profile</a>
             </li>
             <li class="nav-item" (click)="Logout()">
                 <a class="nav-link"  routerLinkActive="active"><i class="fa fa-suitcase" aria-hidden="true"></i>Logout</a>
+            </li>
+            <li class="nav-item">
+                <input type="file">
             </li>
           
         </ul>
