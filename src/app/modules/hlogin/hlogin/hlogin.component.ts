@@ -61,24 +61,32 @@ export class HloginComponent implements OnInit {
   })
 
   check1(){
-    console.log("mlkjnhg")
     this.mmm=!this.mmm;
   }
 
   loginForm(){
     this.dataService.login(this.SignInForm.value).subscribe(data=>{
       this.userTypeValue=data['type']
+      console.log(data)
       localStorage.setItem('userType',data['type'])
       localStorage.setItem('UserId',data['id'])
       localStorage.setItem('Token',data['token'])
+      localStorage.setItem('EmailId',this.SignInForm['email'])
 
       if(this.userTypeValue=='company')
       {
+        localStorage.setItem('Companylogedin', 'true');
         this.router.navigate(['company'])
       }
       else if(this.userTypeValue=='seeker')
       {
+        
         this.router.navigate(['seeker'])
+        localStorage.setItem('seekerlogedin', 'true');
+        
+   
+
+        console.log("Logged IN as Seeker")
       }
     },
     error=>{
@@ -96,19 +104,24 @@ export class HloginComponent implements OnInit {
       if(data['type']==='seeker'){
         localStorage.setItem('userType',data['type'])
         localStorage.setItem('UserId',data['id'])
-        this.router.navigate(['seeker/profile'])
+        localStorage.setItem('EmailId',data['email'])
+        localStorage.setItem('seekerlogedin', 'true')
+        this.router.navigate(['seeker/Details'])
       }
       else if(data['type'] == 'company'){
         localStorage.setItem('userType',data['type'])
         localStorage.setItem('UserId',data['id'])
-        this.router.navigate(['company/profile'])
+        localStorage.setItem('EmailId',data['email'])
+        localStorage.setItem('Companylogedin', 'true')
+        this.router.navigate(['company'])
       }
       }, error => {
-        console.log(error);
+        alert(error);
         
       }
     )
   }
+
   
   
 

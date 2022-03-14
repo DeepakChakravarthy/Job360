@@ -10,6 +10,8 @@ import { SeekerHomeComponent } from './modules/seekers/seeker-home/seeker-home.c
 import { SeekerProfileViewComponent } from './modules/seekers/seeker-profile-view/seeker-profile-view.component';
 import { SeekerProfileComponent } from './modules/seekers/seeker-profile/seeker-profile.component';
 import { AuthGuard } from './shared';
+import { CompanyGuard } from './shared/guard/company.guard';
+import { SeekerGuard } from './shared/guard/seeker.guard';
 
 
 const routes: Routes = [
@@ -44,7 +46,7 @@ const routes: Routes = [
         {
             path:'jobPost',
             component:JobPostPageComponent
-        }]
+        }],canActivate: [CompanyGuard]
     },{
         path:'seeker',
         component:SeekerCorePageComponent,
@@ -64,7 +66,7 @@ const routes: Routes = [
         path:'JobDescripition',
         component:JobDescripitionComponent}
         
-    ]
+    ],canActivate: [SeekerGuard]
     },
 
     { path: 'not-found', loadChildren: () => import('./not-found/not-found.module').then((m) => m.NotFoundModule) },

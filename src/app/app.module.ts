@@ -20,6 +20,8 @@ import { LayoutModule } from '@progress/kendo-angular-layout';
 import { SigninsignupServicesService } from './shared/services/signinsignup-services.service';
 import { GridModule } from '@progress/kendo-angular-grid';
 import { AdminserviceService } from './shared/services/adminservice.service';
+import { SeekerGuard } from './shared/guard/seeker.guard';
+import { CompanyGuard } from './shared/guard/company.guard';
 
 
 
@@ -48,7 +50,7 @@ import { AdminserviceService } from './shared/services/adminservice.service';
         
     ],
     declarations: [AppComponent],
-    providers: [AuthGuard,SigninsignupServicesService,AdminserviceService],
+    providers: [AuthGuard,SigninsignupServicesService,AdminserviceService,SeekerGuard,CompanyGuard],
     bootstrap: [AppComponent]
 })
 export class AppModule {}
