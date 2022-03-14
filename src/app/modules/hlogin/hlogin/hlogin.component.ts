@@ -5,7 +5,6 @@ import {FormGroup,FormControl} from '@angular/forms'
 import { ActivatedRoute, Router} from '@angular/router'
 import { TextBoxComponent } from "@progress/kendo-angular-inputs";
 
-
 @Component({
   selector: 'app-hlogin',
   templateUrl: './hlogin.component.html',
@@ -18,35 +17,17 @@ export class HloginComponent implements OnInit {
   mmm=false;
   userTypeValue:string='';
   Type:Array<string>=['company','seeker'];
-  // notyf = new Notyf({
-  //   duration: 1000,
-  //   position: {
-  //     x: 'right',
-  //     y: 'top',
-  //   },
-  //   types: [
-  //     {
-  //       type: 'warning',
-  //       background: 'orange',
-  //               icon: {
-  //         className: 'material-icons',
-  //         tagName: 'i',
-  //         text: 'warning'
-  //       }
-  //     },
-  //     {
-  //       type: 'error',
-  //       background: 'indianred',
-  //       duration: 2000,
-  //       dismissible: true,
-
-  //     }
-  //   ]
-  // });
-
-
+ LoaderValue=this.dataService.loader
   ngOnInit(): void {
   }
+  public loaders = [
+    {
+      type: "infinite-spinner",
+      themeColor: "info",
+      size: "large",
+    },
+  ];
+
   
   SignInForm:FormGroup = new FormGroup({
     email:new FormControl(''),
@@ -65,6 +46,7 @@ export class HloginComponent implements OnInit {
   }
 
   loginForm(){
+    this.LoaderValue=true
     this.dataService.login(this.SignInForm.value).subscribe(data=>{
       this.userTypeValue=data['type']
       console.log(data)
@@ -80,11 +62,12 @@ export class HloginComponent implements OnInit {
       }
       else if(this.userTypeValue=='seeker')
       {
-        
+        this.LoaderValue=false
         this.router.navigate(['seeker'])
         localStorage.setItem('seekerlogedin', 'true');
         
    
+       
 
         console.log("Logged IN as Seeker")
       }

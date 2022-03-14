@@ -16,32 +16,44 @@ export class JobDescripitionComponent implements OnInit {
   jobSalary:string='Disclosed';
   jobdescripitiondata!:any;
   isActiveData!:string;
-  appliedDate=new Date();
+  LoaderValue=this.dataService.loader
+  //appliedDate=new Date();
+  jobIdData:Number=Number(localStorage.getItem('jobId'))
 
   jobapply:FormGroup=new FormGroup({
-  jobId:new FormControl(localStorage.getItem('jobId')),
-  seekerId:new FormControl(localStorage.getItem('seekerId')),
-  appliedOn:new FormControl(this.appliedDate.toLocaleDateString("nl",{day:"2-digit",month:"2-digit", year:"numeric"}))
+  jobId:new FormControl(this.jobIdData),
+  seekerId:new FormControl(Number(localStorage.getItem('seekerId'))),
+  //appliedOn:new FormControl(this.appliedDate.toLocaleDateString("nl",{day:"2-digit",month:"2-digit", year:"numeric"}))
   })
+
+  public loaders = [
+    {
+      type: "infinite-spinner",
+      themeColor: "info",
+      size: "large",
+    },
+  ];
 
   ngOnInit(): void {
     this.data()
-    this.logg()
+   
  
   }
  
-logg(){
-  this.dataService.userReterive().subscribe(data => {
-    localStorage.setItem('seekerId',data['id'])
-  })
-  console.log(localStorage.getItem('seekerId'),"kjuhgyf",localStorage.getItem('jobId'))
 
-}
   data(){
+    this.LoaderValue=true
     this.dataService.jobDescripitionGetApi().subscribe(data =>{
       console.log(data)
       localStorage.setItem('jobId',data['id'])
+      
       this.jobdescripitiondata=data;
+
+      this.LoaderValue=false;
+    })
+    this.dataService.userReterive().subscribe(data => {
+      console.log(data)
+      localStorage.setItem('seekerId',data['id'])
     })
   }
 
@@ -50,8 +62,10 @@ apply(){
   
   console.log(this.jobapply.value)
   this.dataService.jobAppliedPostApi(this.jobapply.value).subscribe(data =>{
-    //toaster
+    //toaster 
     console.log(data)
+    //Navigating to seeker Home Page
+    
   })
 }
 

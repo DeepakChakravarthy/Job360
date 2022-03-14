@@ -10,7 +10,9 @@ export class SigninsignupServicesService {
 
   api!:string;
   userType:string='';
+  loader:boolean=false;
 
+  //dependency injuction
   login(form:any){
     this.api="https://job360webapi.azurewebsites.net/api/User/authenticate";
 

@@ -7,6 +7,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { InputsModule } from '@progress/kendo-angular-inputs';
 import { DropDownListModule, DropDownsModule } from '@progress/kendo-angular-dropdowns';
 import { SigninsignupServicesService } from '../../shared/services/signinsignup-services.service';
+import { IndicatorsModule } from "@progress/kendo-angular-indicators";
 
 
 @NgModule({
@@ -20,7 +21,9 @@ import { SigninsignupServicesService } from '../../shared/services/signinsignup-
     InputsModule,
     ReactiveFormsModule,
     FormsModule,
-    DropDownListModule
+    DropDownListModule,
+    IndicatorsModule,
+    
   ],
   providers: [
     SigninsignupServicesService

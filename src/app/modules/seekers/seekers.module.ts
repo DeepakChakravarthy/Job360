@@ -14,6 +14,7 @@ import { ProfileServicesService } from '../../shared/services/profile/profile-se
 import { JobServicesService } from '../../shared/services/jobs/job-services.service';
 import { SeekerProfileViewComponent } from './seeker-profile-view/seeker-profile-view.component';
 import { JobDescripitionComponent } from './job-descripition/job-descripition.component';
+import { IndicatorsModule } from '@progress/kendo-angular-indicators';
 
 
 @NgModule({
@@ -35,6 +36,7 @@ import { JobDescripitionComponent } from './job-descripition/job-descripition.co
     RouterModule,
     FormsModule,
     ReactiveFormsModule,
+    IndicatorsModule
     
   ],
   providers: [ProfileServicesService,    JobServicesService  ]

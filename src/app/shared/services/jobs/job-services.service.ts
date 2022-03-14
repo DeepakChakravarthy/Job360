@@ -6,8 +6,11 @@ import {HttpClient} from '@angular/common/http'
 export class JobServicesService {
   api!:string;
   jobId!:number;
+  loader:boolean=false;
   constructor(private _http:HttpClient) { }
 
+
+  //Dependencies Injectable
   jobListGetApi(){
     this.api='https://job360webapi.azurewebsites.net/api/Job';
     return this._http.get(this.api)
@@ -37,7 +40,7 @@ export class JobServicesService {
   }
 
   userReterive(){
-    this.api='https://job360webapi.azurewebsites.net/api/Seeker/retrieveseekerdata'+localStorage.getItem('UserId')
+    this.api='https://job360webapi.azurewebsites.net/api/Seeker/retrieveseekerdata/'+localStorage.getItem('UserId')
     return this._http.get(this.api)
   }
   
