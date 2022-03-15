@@ -2,13 +2,13 @@
 function test(){
 	var tabsNewAnim = $('#navbarSupportedContent');
 	var selectorNewAnim = $('#navbarSupportedContent').find('li').length;
-	var activeItemNewAnim = tabsNewAnim.find('.active');
+	var activeItemNewAnim = tabsNewAnim.find('.active1');
 	var activeWidthNewAnimHeight = activeItemNewAnim.innerHeight();
 	var activeWidthNewAnimWidth = activeItemNewAnim.innerWidth();
 	var itemPosNewAnimTop = activeItemNewAnim.position();
 	var itemPosNewAnimLeft = activeItemNewAnim.position();
 	$(".hori-selector").css({
-	//	"top":itemPosNewAnimTop.top + "px", 
+		"top":itemPosNewAnimTop.top + "px", 
 		"left":itemPosNewAnimLeft.left + "px",
 		"height": activeWidthNewAnimHeight + "px",
 		"width": activeWidthNewAnimWidth + "px"
@@ -29,18 +29,15 @@ function test(){
 	});
 }
 $(document).ready(function(){
-	setTimeout(function(){ test(); });
+	setTimeout(function(){ test(); },500);
 });
 $(window).on('resize', function(){
 	setTimeout(function(){ test(); }, 500);
 });
-function unhide() {
-	$(".navbar-toggler").click(function(){
-		$(".navbar-collapse").slideToggle(300);
-		setTimeout(function(){ test(); });
-	});
-}
-
+$(".navbar-toggler").click(function(){
+	$(".navbar-collapse").slideToggle(300);
+	setTimeout(function(){ test(); });
+});
 
 
 
@@ -50,7 +47,9 @@ jQuery(document).ready(function($){
 	var path = window.location.pathname.split("/").pop();
 
 	// Account for home page with empty path
-
+	if ( path == '' ) {
+		path = 'index.html';
+	}
 
 	var target = $('#navbarSupportedContent ul li a[href="'+path+'"]');
 	// Add active class to target link
@@ -78,30 +77,6 @@ jQuery(document).ready(function($){
 //     })
 // });
 
-
-var numPanels = $('.panel').length;
-
-// if a panel is open, lower its z-idx
-// otherwise, set zIdx back to original
-function checkZ($aPanel) {
-  if ( $aPanel.hasClass('open') ) {
-    $aPanel.css('z-index','1');
-  } else {
-    // set z-index back to original stored in data
-    zIdx = $aPanel.data('zIdx');
-    $aPanel.css( 'z-index', zIdx );
-  }
+function unhide(){
+  document.getElementById("mm").style.display="inline";
 }
-
-// loop through all panels and reverse sort via zIdx
-for (i=0; i<(numPanels); i++  ) {
-  var zIdx =  numPanels-i;
-  $('.panel').eq(i).css('z-index',zIdx).data('zIdx',zIdx);
-}
-
-// when clicking the front panel add class 'open' to panel
-// if clicking bacl panel, remove 'open' from panel
-$('.panel').on('click', '.front, .back', function() {
-  $(this).parent('.panel').toggleClass('open');
-  checkZ($(this).parent('.panel'));
-});

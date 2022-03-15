@@ -7,19 +7,19 @@
         <ul class="navbar-nav ml-auto">
             <div class="hori-selector"><div class="left"></div><div class="right"></div></div>
 
-            <li class="nav-item active" >
-                <a class="nav-link" routerLinkActive="active"><i class="fa fa-tachometer" aria-hidden="true"></i>Dashboard</a>
+            <li class="nav-item " [ngClass]="{'active1': navValue==true}" (click)="dashboard()" >
+                <a class="nav-link" routerLinkActive="active1"><i class="fa fa-tachometer" aria-hidden="true"></i>Dashboard</a>
             </li> 
-            <li class="nav-item" (click)="jobPost()">
-                <a class="nav-link"  routerLinkActive="active"><i class="fa fa-suitcase" aria-hidden="true"></i>Jobs</a>
+            <li class="nav-item" [ngClass]="{'active1': navValue==false}" (click)="jobPost()">
+                <a class="nav-link"  routerLinkActive="active1"><i class="fa fa-suitcase" aria-hidden="true"></i>Jobs</a>
             </li>
            
-            <li class="nav-item">
-                <a class="nav-link" href="javascript:void(0);"><i class="fa fa-user-circle-o" aria-hidden="true"></i>Profile</a>
-            </li>
+            <!-- <li class="nav-item">
+                <a class="nav-link" (click)="profile()" ><i class="fa fa-user-circle-o" aria-hidden="true"></i>Profile</a>
+            </li> -->
 
             <li class="nav-item" (click)="Logout()">
-                <a class="nav-link"  routerLinkActive="active"><i class="fa fa-suitcase" aria-hidden="true"></i>Logout</a>
+                <a class="nav-link"  routerLinkActive="active1"><i class="fa fa-suitcase" aria-hidden="true"></i>Logout</a>
             </li>
         </ul>
     </div>
