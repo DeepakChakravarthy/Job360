@@ -25,8 +25,7 @@ import { CompanyGuard } from './shared/guard/company.guard';
 import { IndicatorsModule } from '@progress/kendo-angular-indicators';
 
 
-
-
+import {ToastrModule} from 'ngx-toastr';
 
 
 
@@ -50,7 +49,7 @@ import { IndicatorsModule } from '@progress/kendo-angular-indicators';
         LayoutModule,
         GridModule,
         IndicatorsModule,
-        
+        ToastrModule.forRoot(),
     ],
     declarations: [AppComponent],
     providers: [AuthGuard,SigninsignupServicesService,AdminserviceService,SeekerGuard,CompanyGuard],
