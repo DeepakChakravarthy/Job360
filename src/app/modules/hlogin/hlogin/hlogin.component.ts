@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { SigninsignupServicesService } from '../../../shared/services/signinsignup-services.service';
 import {FormGroup,FormControl,Validators} from '@angular/forms'
-import { ActivatedRoute, Router} from '@angular/router'
+import { Router} from '@angular/router'
 import { TextBoxComponent } from "@progress/kendo-angular-inputs";
 import { ToastrService } from 'ngx-toastr';
 
@@ -15,21 +15,21 @@ import { ToastrService } from 'ngx-toastr';
 export class HloginComponent implements OnInit {
   FailedSignup: string;
 
-  constructor(private dataService:SigninsignupServicesService,private route: ActivatedRoute, private router: Router,private toastr: ToastrService) { }
+  constructor(private dataService:SigninsignupServicesService,private router: Router,private toastr: ToastrService) { }
   xyz="sign-up-mode";
   mmm=false;
   userTypeValue:string='';
   Type:Array<string>=['company','seeker'];
- LoaderValue=this.dataService.loader
+//  LoaderValue=this.dataService.loader
   ngOnInit(): void {
   }
-  public loaders = [
-    {
-      type: "infinite-spinner",
-      themeColor: "info",
-      size: "large",
-    },
-  ];
+  // public loaders = [
+  //   {
+  //     type: "infinite-spinner",
+  //     themeColor: "info",
+  //     size: "large",
+  //   },
+  // ];
 
   
   SignInForm:FormGroup = new FormGroup({
@@ -49,7 +49,7 @@ export class HloginComponent implements OnInit {
   }
 
   loginForm(){
-    this.LoaderValue=true
+    // this.LoaderValue=true
     this.dataService.login(this.SignInForm.value).subscribe(data=>{
       this.userTypeValue=data['type']
       console.log(data)
@@ -60,7 +60,7 @@ export class HloginComponent implements OnInit {
 
       if(this.userTypeValue=='company')
       {
-        this.LoaderValue=false
+      //   this.LoaderValue=false
         this.toastr.success('Welcome to Job360', 'Login Success');
         localStorage.setItem('Companylogedin', 'true');
         this.router.navigate(['company'])
@@ -68,7 +68,7 @@ export class HloginComponent implements OnInit {
       else if(this.userTypeValue=='seeker')
       {
         this.toastr.success('Welcome to Job360', 'Login Success');
-        this.LoaderValue=false
+        // this.LoaderValue=false
         this.router.navigate(['seeker'])
         localStorage.setItem('seekerlogedin', 'true');
         
@@ -77,12 +77,12 @@ export class HloginComponent implements OnInit {
 
         console.log("Logged IN as Seeker")
       }
-      else{
-        this.LoaderValue=false
-      }
+      // else{
+      //   this.LoaderValue=false
+      // }
     },
     error=>{
-      this.LoaderValue=false
+      // this.LoaderValue=false
         // this.notyf.error('Check your Email/Password')
       this.toastr.error(error.error.message, 'Invalid Credientials');
       console.log(error.error.message)
